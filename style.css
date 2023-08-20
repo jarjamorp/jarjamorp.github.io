@@ -1,0 +1,321 @@
+body {
+  background-color: white;
+  font-family: 'Garamond', serif;
+  margin: 0;
+  padding: 0;
+}
+
+body.BK-bkgnd {
+  background: black;
+}  
+
+body.hell {
+  margin: 0; /* To remove any default margins */
+  height: 700vh; /* To ensure the gradient covers the full viewport height */
+  background: linear-gradient(to bottom, #000000, #ff0000); 
+  /* 'to bottom' is actually the default value and can be omitted, 
+  but I've included it for clarity. It means the gradient starts at the top (with black) 
+  and goes to the bottom (with red). */
+}
+
+body.about {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.navbar a,
+.home-button a {
+  text-decoration: none;
+  color: blue;
+  font-size: 24px;
+  font-family: 'Garamond', serif;
+  font-weight: bold;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  padding: 0px 20px;
+  align-items: center;
+}
+
+.grid .heading-link {
+  flex: 1 1 calc(33.33% - 50px); /* subtracting the gap */
+  margin: 35px 0px 35px 0px;  /* equivalent to gap in grid */
+  font-size: 70px;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  
+}
+
+.home-button {
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Garamond', serif;
+  font-weight: normal;
+  flex-grow: 2;
+  text-align: center;
+  font-size: 100px;
+  margin-right: 120px;
+}
+
+h2 {
+  margin: 0;
+  font-family: 'Garamond', serif;
+  flex-grow: 2;
+  font-size: 60px;
+  /* display: flex; */
+}
+
+h1.WT-H1 {
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh; /* This will make sure the container takes up the entire viewport height */
+  overflow: hidden; /* To prevent scrolling */
+}
+
+.left-column {
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  height: 100vh;
+}
+
+.left-column .home-button {
+  display: flex;
+  justify-content: left; /* Center the image horizontally */
+}
+
+.right-column {
+  display: flex;
+  justify-content: flex-start; /* Align content to the left */
+  align-items: center; /* Center content vertically */
+  padding-left: 20px; /* Some padding so the text isn't right against the column boundary */
+  margin-right: 20%;
+}
+
+.right-column .text-content {
+  text-align: left;
+}
+
+.right-column h2 {
+  margin: 0 0 10px 0;
+}
+
+.right-column p {
+  margin: 0;
+  font-size: 32px;
+}
+
+.left-column {
+  position: relative; /* This allows absolute positioning of child elements relative to this container */
+}
+
+.home-button-about {
+  position: absolute; /* This positions the button independently from other elements in the left-column */
+  top: 20px; /* Adjust as necessary for desired spacing from the top */
+  left: 30px; /* Adjust as necessary for desired spacing from the left */
+  text-decoration: none;
+  color: blue;
+  font-size: 24px;
+  font-family: 'Garamond', serif;
+  font-weight: bold;
+}
+
+.home-button-about-right {
+  position: absolute; /* This positions the button independently from other elements in the left-column */
+  top: 20px; /* Adjust as necessary for desired spacing from the top */
+  right: 30px; /* Adjust as necessary for desired spacing from the left */
+  text-decoration: none;
+  display: none;
+  font-size: 24px;
+  font-family: 'Garamond', serif;
+  font-weight: bold;
+}
+
+.poem {
+  text-align: center;
+  margin-top: 20px; /* Adjust based on your design */
+  margin-bottom: 20px; /* Space between poem and images */
+  font-style: italic;
+  color: white;
+}
+
+.poem p {
+  font-size: 24px;
+  margin: 5px 0; /* Adjust for space between lines of the poem */
+}
+
+.image-grid {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+  align-items: baseline;
+}
+
+.image-container {
+  text-align: center;
+  padding: 10px;
+}
+
+.image-container-1 {
+  text-align: center;
+  padding: 0px;
+}
+
+.footer-image-container {
+  margin-top: 600vh;
+}
+
+.image-grid-1 {
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0px;
+  padding: 0px;
+}
+
+.image-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.image-grid-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.image-grid-9 {
+  grid-template-columns: repeat(9, 1fr);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: none;
+}
+
+img.about {
+  height: 100%;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* Modal Content */
+.modal-content {
+    display: block;
+    max-width: 70%;
+    max-height: 75%;
+    margin: 5% auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Font size for medium screens */
+@media screen and (max-width: 1024px) {
+  .grid .heading-link {
+    font-size: 60px;
+  }
+  .image-grid-9 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .home-button-about-right {
+    color: blue;
+    display: unset;
+  }
+  .home-button-about {
+    display: none;
+  }
+}
+
+/* Font size for small screens */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 50px; /* Example size for medium screens */
+  }
+  .grid .heading-link {
+    font-size: 30px;
+  }
+  .image-grid-6 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .image-grid-9 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  h2 {
+    font-size: 36px;
+  }
+  .right-column p {
+    margin: 0;
+    font-size:24px;
+  }
+  img {
+    object-fit: cover;
+  }
+  .home-button-about-right {
+    color: blue;
+    display: unset;
+  }
+  .home-button-about {
+    display: none;
+  }
+
+}
