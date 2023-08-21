@@ -193,7 +193,68 @@ h1.WT-H1 {
   justify-content: flex-start;
 }
 
+.test-grid-item {
+  height: 550px;
+  flex-basis: 20%;
+  -ms-flex: auto;
+  width: 259px;
+  position: relative;
+  padding: 10px;
+  box-sizing: border-box;
+}
 
+@media(max-width: 1073px) {
+  .grid-item {
+   flex-basis: 33.33%;
+ }
+}
+@media(max-width: 815px) {
+ .grid-item {
+   flex-basis: 50%;
+ }
+}
+@media(max-width: 555px) {
+ .grid-item {
+   flex-basis: 100%;
+ }
+}
+
+.flex-container {
+  /* We first create a flex layout context */
+  display: flex;
+  
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-evenly;
+  justify-content: center;
+  
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  align-items: center;
+}
+
+.flex-item {
+  /* background: tomato; */
+  max-width: 250px;
+  /* flex-grow: 1; */
+  margin: 10px;
+  /* color: white;
+  font-weight: bold;
+  font-size: 3em; */
+}
+
+.flex-item img {
+  width: 100%;
+  height: auto;
+}
 
 /* Testing new grid using flex */
 
@@ -322,6 +383,10 @@ img.about {
   }
   .home-button-about {
     display: none;
+  }
+  .flex-item {
+    max-width: 110px;
+    margin: 8px;
   }
 
 }
