@@ -1,12 +1,17 @@
 body {
-  background-color: white;
-  font-family: 'Garamond', serif;
+  background-color: #fafafa;
+  font-family: 'Instrument Serif', serif;
   margin: 0;
   padding: 0;
+  line-height: 1;
 }
 
 body.BK-bkgnd {
-  background: black;
+  background: #000042;
+}  
+
+body.WT-bkgnd {
+  background: white;
 }  
 
 body.hell {
@@ -22,6 +27,12 @@ body.about {
   overflow: hidden;
 }
 
+.about-text {
+  text-align: center;
+  font-size: 90px;
+  line-height: 1;
+}
+
 a {
   text-decoration: none;
   color: blue;
@@ -31,16 +42,18 @@ a {
   display: flex;
   justify-content: space-around;
   padding: 20px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .navbar a,
 .home-button a {
   text-decoration: none;
-  color: blue;
+  color: lightgray;
+  font-size: 40px;
+}
+
+a.navbar-index {
   font-size: 24px;
-  font-family: 'Garamond', serif;
-  font-weight: bold;
 }
 
 .grid {
@@ -54,7 +67,7 @@ a {
 .grid .heading-link {
   flex: 1 1 calc(33.33% - 50px); /* subtracting the gap */
   margin: 35px 0px 35px 0px;  /* equivalent to gap in grid */
-  font-size: 70px;
+  font-size: 90px;
   text-align: center;
   color: black;
   text-decoration: none;
@@ -74,7 +87,6 @@ a {
 
 h1 {
   margin: 0;
-  font-family: 'Garamond', serif;
   font-weight: normal;
   flex-grow: 2;
   text-align: center;
@@ -84,7 +96,6 @@ h1 {
 
 h2 {
   margin: 0;
-  font-family: 'Garamond', serif;
   flex-grow: 2;
   font-size: 60px;
   /* display: flex; */
@@ -99,64 +110,6 @@ h1.WT-H1 {
   grid-template-columns: 1fr 1fr;
   height: 100vh; /* This will make sure the container takes up the entire viewport height */
   overflow: hidden; /* To prevent scrolling */
-}
-
-.left-column {
-  display: flex;
-  justify-content: center; /* Center the image horizontally */
-  height: 100vh;
-}
-
-.left-column .home-button {
-  display: flex;
-  justify-content: left; /* Center the image horizontally */
-}
-
-.right-column {
-  display: flex;
-  justify-content: flex-start; /* Align content to the left */
-  align-items: center; /* Center content vertically */
-  padding-left: 20px; /* Some padding so the text isn't right against the column boundary */
-  margin-right: 20%;
-}
-
-.right-column .text-content {
-  text-align: left;
-}
-
-.right-column h2 {
-  margin: 0 0 10px 0;
-}
-
-.right-column p {
-  margin: 0;
-  font-size: 32px;
-}
-
-.left-column {
-  position: relative; /* This allows absolute positioning of child elements relative to this container */
-}
-
-.home-button-about {
-  position: absolute; /* This positions the button independently from other elements in the left-column */
-  top: 20px; /* Adjust as necessary for desired spacing from the top */
-  left: 30px; /* Adjust as necessary for desired spacing from the left */
-  text-decoration: none;
-  color: blue;
-  font-size: 24px;
-  font-family: 'Garamond', serif;
-  font-weight: bold;
-}
-
-.home-button-about-right {
-  position: absolute; /* This positions the button independently from other elements in the left-column */
-  top: 20px; /* Adjust as necessary for desired spacing from the top */
-  right: 30px; /* Adjust as necessary for desired spacing from the left */
-  text-decoration: none;
-  display: none;
-  font-size: 24px;
-  font-family: 'Garamond', serif;
-  font-weight: bold;
 }
 
 .poem {
@@ -309,8 +262,8 @@ img.about {
 /* Modal Content */
 .modal-content {
     display: block;
-    max-width: 70%;
-    max-height: 75%;
+    max-width: 90%;
+    max-height: 85%;
     margin: 5% auto;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     animation-name: zoom;
@@ -345,13 +298,6 @@ img.about {
   .grid .heading-link {
     font-size: 60px;
   }
-  .home-button-about-right {
-    color: blue;
-    display: unset;
-  }
-  .home-button-about {
-    display: none;
-  }
   .image-grid {
     grid-template-rows: auto, 1fr;
   }
@@ -369,24 +315,11 @@ img.about {
     font-size: 36px;
     padding-top: 20px;
   }
-  .right-column p {
-    margin: 0;
-    margin-right: 10px;
-    font-size:24px;
-  }
-  img.about {
-    object-fit: cover;
-  }
-  .home-button-about-right {
-    color: blue;
-    display: unset;
-  }
-  .home-button-about {
-    display: none;
-  }
   .flex-item {
     max-width: 110px;
     margin: 8px;
   }
-
+  .about-text {
+    font-size: 60px;
+  }
 }

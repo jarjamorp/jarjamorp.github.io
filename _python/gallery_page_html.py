@@ -1,7 +1,7 @@
 def generate_image_divs(foldername, number_of_images):
     """Generates image container divs with images for a given range."""
     template = """
-  <div class="image-container"><img src="{foldername}/{num}.webp" alt="Image {num}" onclick="openModal(this)"></div>
+  <div class="flex-item"><img src="{foldername}/{num}.webp" alt="Image {num}" onclick="openModal(this)"></div>
 """
     return ''.join([template.format(foldername=foldername, num=i) for i in range(1, number_of_images + 1)])
 
@@ -19,16 +19,16 @@ def create_html_content(title, foldername, number_of_images):
 <script src="script.js"></script>
 <title>{title}</title>
 </head>
-<body>
+<body class="BK-bkgnd">
 <div class="header">
   <div class="home-button">
     <a href="index.html">HOME</a> 
   </div>
-  <h1>{title}</h1> 
+  <h1 class="WT-H1">{title}</h1> 
 </div>
 
-<div class="image-grid image-grid-6">
-{image_divs}
+<div class="flex-container">
+  {image_divs}
 </div>
 
 <!-- The Modal -->
@@ -44,8 +44,8 @@ def create_html_content(title, foldername, number_of_images):
 
 def main():
     """Main function to write the HTML content to a file."""
-    html_content = create_html_content('Space Rocks', 'space-rocks', 24)
-    with open("output.html", "w") as file:
+    html_content = create_html_content('Vegemite & Soy Sauce', 'veg-soy-sauce', 29)
+    with open("veg-soy-sauce.html", "w") as file:
         file.write(html_content)
 
 if __name__ == "__main__":
