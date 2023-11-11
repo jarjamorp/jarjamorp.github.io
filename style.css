@@ -3,25 +3,16 @@ body {
   font-family: 'Instrument Serif', serif;
   margin: 0;
   padding: 0;
-  line-height: 1;
+  /* line-height: 1; */
 }
 
 body.BK-bkgnd {
-  background: #000042;
+  background: black;
 }  
 
 body.WT-bkgnd {
   background: white;
 }  
-
-body.hell {
-  margin: 0; /* To remove any default margins */
-  height: 700vh; /* To ensure the gradient covers the full viewport height */
-  background: linear-gradient(to bottom, #000000, #ff0000); 
-  /* 'to bottom' is actually the default value and can be omitted, 
-  but I've included it for clarity. It means the gradient starts at the top (with black) 
-  and goes to the bottom (with red). */
-}
 
 body.about {
   overflow: hidden;
@@ -33,9 +24,46 @@ body.about {
   line-height: 1;
 }
 
+.post-container {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 100vh;
+  width: 60%; 
+  max-width: 600px; 
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left; 
+  padding: 30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Instrument Serif', serif;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+h3 {
+  font-size: 1.75em;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+body.hell {
+  margin: 0; /* To remove any default margins */
+  height: 700vh; /* To ensure the gradient covers the full viewport height */
+  background: linear-gradient(to bottom, #000000, #ff0000); 
+  /* 'to bottom' is actually the default value and can be omitted, 
+  but I've included it for clarity. It means the gradient starts at the top (with black) 
+  and goes to the bottom (with red). */
+}
+
 a {
   text-decoration: none;
-  color: blue;
+  color: gray;
 }
 
 .navbar {
@@ -48,12 +76,18 @@ a {
 .navbar a,
 .home-button a {
   text-decoration: none;
-  color: lightgray;
   font-size: 40px;
 }
 
+.home-button {
+  padding: 20px;
+  color: gray;
+}
+
 a.navbar-index {
-  font-size: 24px;
+  font-size: medium;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(230, 230, 230);
 }
 
 .grid {
@@ -81,10 +115,6 @@ a.navbar-index {
   
 }
 
-.home-button {
-  padding: 20px;
-}
-
 h1 {
   margin: 0;
   font-weight: normal;
@@ -92,13 +122,6 @@ h1 {
   text-align: center;
   font-size: 100px;
   margin-right: 120px;
-}
-
-h2 {
-  margin: 0;
-  flex-grow: 2;
-  font-size: 60px;
-  /* display: flex; */
 }
 
 h1.WT-H1 {
@@ -112,19 +135,6 @@ h1.WT-H1 {
   overflow: hidden; /* To prevent scrolling */
 }
 
-.poem {
-  text-align: center;
-  margin-top: 20px; /* Adjust based on your design */
-  margin-bottom: 20px; /* Space between poem and images */
-  font-style: italic;
-  color: white;
-}
-
-.poem p {
-  font-size: 24px;
-  margin: 5px 0; /* Adjust for space between lines of the poem */
-}
-
 .image-grid {
   /* position: absolute; */
   display: grid;
@@ -132,28 +142,6 @@ h1.WT-H1 {
   padding: 20px;
   align-items: baseline;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
-
-/* Testing new grid using flex */
-
-.test-container {
-  max-width: 1335px;
-  margin: 0 auto;
-}
-.test-grid-row {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-}
-
-.test-grid-item {
-  height: 550px;
-  flex-basis: 20%;
-  -ms-flex: auto;
-  width: 259px;
-  position: relative;
-  padding: 10px;
-  box-sizing: border-box;
 }
 
 @media(max-width: 1073px) {
