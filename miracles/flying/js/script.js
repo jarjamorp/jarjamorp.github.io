@@ -1,5 +1,5 @@
 // Initialize the map
-var map = L.map('map').setView([51.505, -0.09], 2); // Latitude and Longitude of the map's initial center and the initial zoom level
+var map = L.map('map').setView([0, 0], 2); // Latitude and Longitude of the map's initial center and the initial zoom level
 
 // Add a tile layer to add to our map
 // Here, we're using OpenStreetMap's free tiles
@@ -32,31 +32,43 @@ function fetchFlightData() {
 //     data.forEach(flight => {
 //         const [lat, lng, status] = flight;
 
-//         // Create a marker and add it to the map
-//         var marker = L.marker([lat, lng]).addTo(map);
-
 //         // Optional: Customize the marker based on flight status or other criteria
 //         if (status === 'landed') {
-//             marker.bindPopup('Flight Landed');
+//             // Create a custom div element for the firework effect
+//             var flashMarker = L.divIcon({
+//                 className: 'flash-marker',
+//                 iconSize: [10, 10]
+//             });
+
+//             // Place the custom marker on the map
+//             L.marker([lat, lng], { icon: flashMarker }).addTo(map);
 //         }
 //     });
 // }
 
 function processAndDisplayFlights(data) {
-    // Process only the first 100 rows
     for (let i = 0; i < 10000 && i < data.length; i++) {
-        const [lat, lng, status] = data[i];
+        // Introduce a delay for each iteration
+        setTimeout(function() {
+            const [lat, lng, status] = data[i];
 
-        // Customize the marker popup based on flight status
-        if (status === 'landed') {
-            // Create a marker and add it to the map
-            var marker = L.marker([lat, lng]).addTo(map);
-            marker.bindPopup('Flight Landed');
-        } else {
-            // marker.bindPopup('Flight Status: ' + status);
-        }
+            if (status === 'landed') {
+                // Create a custom div element for the firework effect
+                var flashMarker = L.divIcon({
+                    className: 'firework-marker',
+                    iconSize: [100, 100]
+                });
+
+                // Place the custom marker on the map
+                L.marker([lat, lng], { icon: flashMarker }).addTo(map);
+            }
+        }, i * 5); // 200 milliseconds delay per iteration
     }
 }
+
+
+
+
 
 
 // Call the function to fetch data
