@@ -65,6 +65,6 @@ def save_array_as_csv(array_data, file_name):
 
 # Save the file
 # file_path = "/mnt/data/unique_flight_data.csv"
-file_path = "C:/Users/harra/Downloads/unique_flight_data.csv"
+file_path = "C:/projects/website-content/flying/unique_flight_data.csv"
 save_message = save_array_as_csv(np_unique_data, file_path)
 save_message, file_path
