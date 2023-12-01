@@ -34,12 +34,17 @@ body.about {
 .post-container {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   height: 100vh;
-  width: 60%; 
   max-width: 600px; 
   margin-left: auto;
   margin-right: auto;
   text-align: left; 
-  padding: 30px;
+  padding: 10px;
+}
+
+.img-center {
+  text-align: center;
+  max-width: 600px;
+  height: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -115,27 +120,6 @@ a.navbar-index {
   text-decoration: none;
   padding: 20px;
 }
-
-.grid-writing {
-  flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0px 10px;
-  text-align: center;
-}
-
-.grid-writing .heading-link {
-  flex: 1 1 calc(33.33% - 50px); /* subtracting the gap */
-  margin: 35px 0px 35px 0px;  /* equivalent to gap in grid */
-  font-size: 100px;
-  text-align: center;
-  color: black;
-  text-decoration: none;
-  padding: 20px;
-}
-
-
-
 
 .header {
   display: flex;
