@@ -1,361 +1,139 @@
+/* GLOBAL */
+
 html, body {
-  background-color: #fafafa;
-  /* font-family: 'Instrument Serif', serif; */
   font-family: 'EB Garamond', serif;
   margin: 0;
   padding: 0;
-  /* line-height: 1; */
 }
-
-#map {
-  /* height: 100%; */
-  height: 1000px;
-  width: 100%;
-  background-color: black;
+h1 {
+  font-size: 3em;
+  font-weight: normal;
+  line-height: 0.8;
 }
-
-body.BK-bkgnd {
-  background: black;
-  /* background: white; */
-}  
-
-body.WT-bkgnd {
-  background: white;
-}  
-
-body.about {
-  overflow: hidden;
-}
-
-.about-text {
-  text-align: center;
-  font-size: 90px;
-  line-height: 1;
-}
-
-.post-container {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  height: 100vh;
-  max-width: 600px; 
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left; 
-  padding: 10px;
-}
-
-.img-center {
-  text-align: center;
-  max-width: 600px;
-  height: auto;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  border: none;
-}
-
-img.about {
-  height: 100%;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 20px;
-}
-
-h2 {
-  font-size: 2.5em;
-}
-
-h3 {
-  font-size: 1.75em;
-}
-
 p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
   margin-bottom: 20px;
 }
-
-body.hell {
-  margin: 0; /* To remove any default margins */
-  height: 700vh; /* To ensure the gradient covers the full viewport height */
-  background: linear-gradient(to bottom, #000000, #ff0000); 
-  /* 'to bottom' is actually the default value and can be omitted, 
-  but I've included it for clarity. It means the gradient starts at the top (with black) 
-  and goes to the bottom (with red). */
-}
-
 a {
   text-decoration: none;
   color: gray;
 }
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.home-btn {
+  font-size: 1.5em;
+  color: black;
+}
 
+/* HOME INDEX PAGE */
+
+.home-container {
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px 10px;
+  text-align: center;
+}
+.home-links {
+  font-size: 125px;
+  text-align: center;
+  text-decoration: none;
+  padding: 20px 40px;
+  color: black;
+}
 .navbar {
   display: flex;
   justify-content: space-around;
   padding: 20px;
   margin-top: 20px;
 }
-
-.navbar a,
-.home-button a {
-  text-decoration: none;
-  font-size: 40px;
-}
-
-.home-button {
-  padding: 20px;
-  color: gray;
-}
-
-a.navbar-index {
-  font-size: 24px;
-  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
-  /* font-family: 'Instrument Serif', serif; */
-  font-family: 'Instrument Serif', serif;
+.navbar-item {
   color: rgb(230, 230, 230);
+  font-family: Verdana, sans-serif;
 }
 
-.grid {
-  flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 70px 10px;
-  text-align: center;
-}
+/* GALLERY PAGE */
 
-.grid .heading-link {
-  flex: 1 1 calc(33.33% - 50px); /* subtracting the gap */
-  margin: 35px 0px 35px 0px;  /* equivalent to gap in grid */
-  /* font-size: 100px; */
-  font-size: 125px;
-  text-align: center;
-  color: black;
-  text-decoration: none;
-  padding: 20px;
-}
-
-.header {
+.gallery-container {
   display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  
 }
-
-h1 {
-  margin: 0;
-  font-weight: normal;
-  flex-grow: 2;
-  text-align: center;
-  font-size: 100px;
-  margin-right: 120px;
-}
-
-h1.WT-H1 {
-  color: white;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 100vh; /* This will make sure the container takes up the entire viewport height */
-  overflow: hidden; /* To prevent scrolling */
-}
-
-.image-grid {
-  /* position: absolute; */
-  display: grid;
-  gap: 10px;
-  padding: 20px;
-  align-items: baseline;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
-
-@media(max-width: 1073px) {
-  .grid-item {
-   flex-basis: 33.33%;
- }
-}
-@media(max-width: 815px) {
- .grid-item {
-   flex-basis: 50%;
- }
-}
-@media(max-width: 555px) {
- .grid-item {
-   flex-basis: 100%;
- }
-}
-
-.flex-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  align-items: center;
-}
-
-.flex-item {
-  max-width: 250px;
+.gallery-sidebar {
+  width: 16%; 
+  position: fixed; 
   margin: 10px;
-  padding-left: 2px;
-  padding-right: 2px;
+  overflow-y: auto; 
+}
+.gallery-content {
+  padding: 5px;
+  overflow-x: hidden;
+  margin-left: 18%; 
+  overflow-y: auto; 
+  background-color: black;
+}
+.brick {
+  padding: 5px;
+}
+.brick:hover img {
+  cursor: pointer;
+  filter: brightness(120%);
 }
 
-.flex-item img {
-  width: 100%;
-  height: auto;
-  border: 1px solid white; 
-}
+/* GALLERY PAGES MODAL */
 
-/* Testing new grid using flex */
-
-.image-container {
-  text-align: center;
-  padding: 10px;
-}
-
-.image-container-1 {
-  text-align: center;
-  padding: 0px;
-}
-
-.image-container-1 img {
-  max-width: 500px;
-  border: 1px solid white;
-}
-
-.footer-image-container {
-  margin-top: 600vh;
-}
-
-.image-grid-1 {
-  grid-template-columns: repeat(1, 1fr);
-  gap: 0px;
-  padding: 0px;
-}
-
-.image-grid-3 {
-  grid-template-columns: repeat(auto-fill, minmax(max(200px, 100%/4), 1fr));
-}
-
-/* The Modal (background) */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 20px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.9);
+  display: none;
+  position: fixed;
+  z-index: 1;
+  margin-left: 18%;
+  left: 0;
+  top: 0;
+  width: 82%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
 }
-
-/* Modal Content */
 .modal-content {
-    display: block;
-    max-width: 90%;
-    max-height: 85%;
-    margin: 5% auto;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    animation-name: zoom;
-    animation-duration: 0.6s;
+  display: block;
+  max-width: 90%;
+  max-height: 85%;
+  margin: 1% auto;
 }
-
-@keyframes zoom {
-    from {transform:scale(0)}
-    to {transform:scale(1)}
-}
-
-/* The Close Button */
 .close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
+  top: 10px;
+  display: grid;
+  text-align: center;
+  color: white;
+  font-size: 2em;
+}
+.close:hover {
+  cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
+/* RESPONSIVE */
 
-/* Miracles css */
-
-@keyframes firework {
-  0% {
-      opacity: 1;
-      width: 10px;
-      height: 10px;
-      background-color: red;
+@media screen and (max-width: 768px) {
+  .gallery-container {
+    flex-flow: row wrap;
   }
-  50% {
-      width: 20px;
-      height: 20px;
-      background-color: orange;
+  .gallery-sidebar {
+    position: static;
+    width: 100%;
+    order: 1;
   }
-  100% {
-      opacity: 0;
-      width: 30px;
-      height: 30px;
-      background-color: yellow;
+  .gallery-content {
+    width: 100%;
+    order: 2;
+    margin-left: 0; 
   }
-}
-
-.firework-marker {
-  border-radius: 50%;
-  position: absolute;
-  animation: firework 1s ease-out;
-}
-
-
-/* Font size for medium screens */
-@media screen and (max-width: 1024px) {
-  .grid .heading-link {
-    font-size: 60px;
-    padding: 10px;
+  .modal {
+    margin-left: 0px;
+    width: 100%;
   }
-  .image-grid {
-    grid-template-rows: auto, 1fr;
-  }
-  a.navbar-index {
-    font-size: 20px;
-  }
-}
-
-/* Font size for small screens */
-@media screen and (max-width: 500px) {  /* 768px */
-  h1 {
-    font-size: 50px; /* Example size for medium screens */
-  }
-  .grid .heading-link {
-    font-size: 30px;
-    padding: 5px;
-  }
-  h2 {
-    font-size: 36px;
-    padding-top: 20px;
-  }
-  .flex-item {
-    max-width: 110px;
-    margin: 8px;
-  }
-  .about-text {
-    font-size: 60px;
-  }
-  a.navbar-index {
-    font-size: 16px;
-  }
-  .image-container-1 img {
-    max-width: 350px;
+  .modal-content {
+    margin-top: 30%;
   }
 }
