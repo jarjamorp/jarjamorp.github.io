@@ -1,0 +1,95 @@
+html, body {
+  background-color: #fafafa;
+  font-family: 'EB Garamond', serif;
+  margin: 0;
+  padding: 0;
+}
+/* h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 20px;
+} */
+h1 {
+  font-size: 4em;
+  font-weight: normal;
+  line-height: 0.8;
+}
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+  margin-bottom: 20px;
+}
+a {
+  text-decoration: none;
+  color: gray;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.home-btn {
+  font-size: 1.5em;
+  color: black;
+}
+
+/* GALLERY PAGES */
+
+.gallery-container {
+  display: flex;
+  height: 100%;
+}
+.gallery-sidebar {
+  width: 18%; 
+  position: fixed; 
+  margin-left: 10px;
+  margin-top: 20px;
+  height: 100%;
+  overflow-y: auto; 
+  z-index: 2; 
+}
+.gallery-content {
+  margin-left: 18%; /* Same as the width of the left-section */
+  width: 82%; /* Remaining width */
+  overflow-y: auto; /* Allows for scrolling within the right section */
+  height: 100%;
+  background-color: black;
+}
+.gallery-masonry {
+  max-width: 1920px;
+  min-height: 500px;
+  padding: 5px;
+  overflow-x: hidden;
+}
+.brick {
+  padding: 5px;
+}
+
+/* GALLERY PAGES MODAL */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  margin-left: 18%;
+  left: 0;
+  top: 0;
+  width: 82%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+.modal-content {
+  display: block;
+  max-width: 90%;
+  max-height: 85%;
+  margin: 1% auto;
+}
+.close {
+  top: 10px;
+  display: grid;
+  text-align: center;
+  color: white;
+  font-size: 2em;
+}
+.close:hover {
+  cursor: pointer;
+}
