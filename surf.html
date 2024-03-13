@@ -10,17 +10,19 @@
 <link rel="stylesheet" href="style-flexmasonry.css">
 <script src="script.js"></script>
 
-<title>Surfing is Fun</title>
+<title>Surfing = Fun</title>
 </head>
 <body>
   <div class="gallery-container">
     <div class="gallery-sidebar">
       <a class="home-btn" href="index.html"><</a>
-      <h1>Surfing is Fun</h1>
+      <h1>Surfing = Fun</h1>
     </div>
     <div class="gallery-content">
       <div class="grid">
         
+  <div><div class="brick"><img src="surf/0-tn.webp" alt="Image 0" onclick="openModal(this)"></div></div>
+
   <div><div class="brick"><img src="surf/1-tn.webp" alt="Image 1" onclick="openModal(this)"></div></div>
 
   <div><div class="brick"><img src="surf/2-tn.webp" alt="Image 2" onclick="openModal(this)"></div></div>
@@ -107,14 +109,12 @@
 
   <div><div class="brick"><img src="surf/43-tn.webp" alt="Image 43" onclick="openModal(this)"></div></div>
 
-  <div><div class="brick"><img src="surf/44-tn.webp" alt="Image 4" onclick="openModal(this)"></div></div>
-
       </div>
     </div>
   </div>
 
   <div id="imageModal" class="modal"> 
-      <span class="close" onclick="closeModal()">&times;</span>
+      <span class="close-btn" onclick="closeModal()">&times;</span>
       <img class="modal-content" id="modalImage">
       <div id="caption"></div>
   </div>

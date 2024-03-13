@@ -38,7 +38,7 @@ def create_html_content(title, foldername, number_of_images):
   </div>
 
   <div id="imageModal" class="modal"> 
-      <span class="close" onclick="closeModal()">&times;</span>
+      <span class="close-btn" onclick="closeModal()">&times;</span>
       <img class="modal-content" id="modalImage">
       <div id="caption"></div>
   </div>
@@ -73,7 +73,7 @@ def main():
                  'Covid Quarantine', 'Dead of Night', 'Figuring', 'Graphic Accidents', 'Merica', 'Not a Photo',
                  'Patterns: Amsterdam', 'Patterns: London', 'Patterns: Taipei', 'Plane Crash', 'Pointless Shapes',
                  'Rust', 'Self Portraits', 'Slow Light', 'Space Rocks', 'Spring', 'Stream As Sculpture',
-                 'Surfing is Fun', 'Trash / Treasure', 'Vegemite & Soy Sauce']
+                 'Surfing = Fun', 'Trash/Treasure', 'Vegemite & Soy Sauce']
   file_counts = count_files_in_folders(base_directory, folder_names)
   
   """Main function to write the HTML content to a file."""
