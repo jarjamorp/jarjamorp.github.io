@@ -31,6 +31,7 @@ img {
 }
 iframe {
   border: 1px solid rgb(25, 25, 25);
+  width: 97%;
 }
 
 /* HOME INDEX PAGE */
@@ -74,10 +75,14 @@ iframe {
   bottom: 0;
   scrollbar-width: none;
 }
+.gallery-bkgd {
+  background-color: black;
+  height: 100vh; /* Full height of the viewport */
+  margin-left: 18%;
+}
 .gallery-content {
   padding: 5px;
   overflow-x: hidden;
-  margin-left: 18%; 
   overflow-y: auto; 
   background-color: black;
   scrollbar-width: thin;
@@ -105,7 +110,7 @@ iframe {
 .single-item img {
   max-height: 95vh;
   margin-top: 20px;
-  border: 1px solid gray;
+  border: 1px solid rgb(25, 25, 25);
 }
 .gallery-single#moore-div {
   height: 100vh;
@@ -113,6 +118,22 @@ iframe {
 #moore {
   height: 850px;
   max-width: 40vw;
+}
+.WT-bkgd {
+  background-color: white;
+  border-left: 1px solid black;
+  height: auto;
+}
+.WT-bkgd img {
+  border: none;
+  margin-top: 0px;
+}
+#hell {
+  background-color: red;
+  height: 100vh;
+}
+#hell img {
+  border: none;
 }
 
 /* GALLERY PAGES MODAL */
@@ -147,6 +168,18 @@ iframe {
 
 /* RESPONSIVE */
 
+@media only screen and (max-width: 1200px) {
+  .gallery-sidebar {
+    width: 33%;
+  }
+  .gallery-bkgd {
+    margin-left: 34%;
+  }
+  .gallery-single {
+    margin-left: 34%;
+  }
+}
+
 /* Tablet and mobile */
 @media only screen and (max-width: 768px) {
   .gallery-container {
@@ -157,16 +190,27 @@ iframe {
     width: 100%;
     order: 1;
   }
-  .gallery-content {
-    width: 100%;
+  .gallery-bkgd {
+    height: auto;
+    margin-left: 0;
     order: 2;
+  }
+  .gallery-content {
+    width: auto;
+    order: 3;
     margin-left: 0; 
   }
   .gallery-single {
     width: 100%;
-    order: 2;
+    order: 2; 
     margin-left: 0;
     align-items: flex-start; 
+  }
+  .WT-bkgd {
+    border: none;
+  }
+  #hell {
+    align-items: center;
   }
   .single-item img {
     max-width: 95vw;

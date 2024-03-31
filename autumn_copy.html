@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style-flexmasonry.css">
+<script src="script.js"></script>
+
+<title>Autumn</title>
+</head>
+<body>
+  <div class="gallery-container">
+    <div class="gallery-sidebar">
+      <a class="home-btn" href="index.html"><</a>
+      <h1>Autumn</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin augue nec purus aliquet volutpat at sed erat. Nunc pharetra vulputate rutrum. Phasellus tristique laoreet leo nec fringilla. Sed ac sem egestas, suscipit ligula eget, vestibulum turpis. Mauris eleifend mauris a congue pretium. Curabitur tempus ornare bibendum. Nulla urna elit, egestas ut quam sollicitudin, vehicula posuere augue.
+      </p>
+    </div>
+    <div class="gallery-bkgd">
+      <div class="gallery-content">
+        <div class="grid">
+        
+          <div><div class="brick"><img src="autumn/0-tn.webp" alt="Image 0" onclick="openModal(this)"></div></div>
+
+          <div><div class="brick"><img src="autumn/1-tn.webp" alt="Image 1" onclick="openModal(this)"></div></div>
+
+          <div><div class="brick"><img src="autumn/2-tn.webp" alt="Image 2" onclick="openModal(this)"></div></div>
+
+          <div><div class="brick"><img src="autumn/3-tn.webp" alt="Image 3" onclick="openModal(this)"></div></div>
+
+          <div><div class="brick"><img src="autumn/4-tn.webp" alt="Image 4" onclick="openModal(this)"></div></div>
+
+          <div><div class="brick"><img src="autumn/5-tn.webp" alt="Image 5" onclick="openModal(this)"></div></div>
+
+          <div><div class="brick"><img src="autumn/6-tn.webp" alt="Image 6" onclick="openModal(this)"></div></div>
+
+          <div><div class="brick"><img src="autumn/7-tn.webp" alt="Image 7" onclick="openModal(this)"></div></div>
+
+          <div><div class="brick"><img src="autumn/8-tn.webp" alt="Image 8" onclick="openModal(this)"></div></div>
+
+          <div><div class="brick"><img src="autumn/9-tn.webp" alt="Image 9" onclick="openModal(this)"></div></div>
+
+          <div><div class="brick"><img src="autumn/10-tn.webp" alt="Image 10" onclick="openModal(this)"></div></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="imageModal" class="modal"> 
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImage">
+      <div id="caption"></div>
+  </div>
+  
+  <script>
+      FlexMasonry.init('.grid');
+  </script>
+
+</body>
+</html>
