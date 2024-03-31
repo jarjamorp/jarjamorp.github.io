@@ -100,7 +100,6 @@ iframe {
   margin-left: 18%;
   width: 100%;
   background-color: black;
-  /* background-color: white; */
   height: 100vh;
 }
 .single-item img {
@@ -109,14 +108,11 @@ iframe {
   border: 1px solid gray;
 }
 .gallery-single#moore-div {
-  /* height: 95vh; */
-  height: 1600px;
-  /* max-width: 50vw; */
+  height: 100vh;
 }
 #moore {
-  /* height: 95vh; */
-  height: 1500px;
-  max-width: 50vw;
+  height: 850px;
+  max-width: 40vw;
 }
 
 /* GALLERY PAGES MODAL */
