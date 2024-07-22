@@ -10,6 +10,7 @@ h1, h2, h3 {
 }
 h1 {
   font-size: 3em;
+  margin: 0;
 }
 h2 {
   font-size: 2.25em;
@@ -39,29 +40,22 @@ p {
   color: inherit;
 }
 
-/*--------- GALLERY PAGE ----------*/
+/*--------- SERIES PAGE ----------*/
 
-.header--gallery {
+.header--series {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
-.nav--gallery {
+.nav--series {
   position: absolute;
   left: 30px; 
 }
-.nav__link {
+.nav__link--series {
   text-decoration: none; 
   color: inherit;
-}
-.header__title {
-  display: flex;
-  justify-content: center;
-}
-.header__title h1 {
-  margin: 0;
 }
 .gallery {
   width: auto;
@@ -87,12 +81,15 @@ p {
 .gallery__item img {
   border: 1px solid lightgray;
 }
-.post--gallery {
+.post--series {
   width: 95%;
   max-width: 650px;
   text-align: left;
   margin: 0 auto; 
 }
+
+/*--------- ENLARGE IMAGES ----------*/
+
 .lightbox {
   display: none;
   position: fixed;
@@ -120,6 +117,8 @@ p {
   color: lightgray;
   text-decoration: none;
 }
+
+/*--------- MOBILE RESPONSIVE ----------*/
 
 @media (max-width: 600px) {
   .gallery__item {
