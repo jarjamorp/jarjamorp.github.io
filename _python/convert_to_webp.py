@@ -14,8 +14,8 @@ def convert_to_webp(directory):
             with Image.open(filepath) as img:
                 # Resize the image maintaining the aspect ratio
                 aspect_ratio = img.height / img.width
-                new_height = int(400 * aspect_ratio)  
-                thumbnail_img = img.resize((400, new_height))
+                new_height = int(150 * aspect_ratio)  
+                thumbnail_img = img.resize((150, new_height))
                 
                 # Save the image and thumbnail in .webp format with numbered prefix
                 large_webp_path = os.path.join(directory, f"{counter}.webp")
