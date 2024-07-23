@@ -5,61 +5,98 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="style-flexmasonry.css">
-<script src="script.js"></script>
-
 <title>Covid Quarantine</title>
 </head>
 <body>
-  <div class="gallery-container">
-    <div class="gallery-sidebar">
-      <a class="home-btn" href="index.html"><</a>
-      <h1>Covid Quarantine</h1>
-      <p>
-        Traveling home to Australia during Covid was pretty inconvenient. 
-      </p>
-      <p>
-        There was a cap at 4,000 people per week that could enter Australia.  
-        Authorities claimed 35,000 people wanted to get home. 
-        Airlines, based on their numbers, said it was more like 100,000. 
-        Seats on repatriation flights would go immeidately upon becoming available, like a music festival.  
-        After a few attempts refreshing the screen at the time
-        We landed in the desert in Darwin, Northern Territory, met by a sea of hazmat suits and swabs. 
-        After a stern, but muffled, lecture of the seriousness of the situation, we were loaded onto a bus and driven to a quarantine camp. 
-        A large camp of small prefab units, rows and rows of them plonked on the hot red dirt under a hot blue sky.
-      </p>
-    </div>
-    <div class="gallery-bkgd">
-      <div class="gallery-content">
-        <div class="grid">
-          <div><div class="brick"><img src="covid-quarantine/0-tn.webp" alt="Image 0" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="covid-quarantine/1-tn.webp" alt="Image 1" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="covid-quarantine/2-tn.webp" alt="Image 2" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="covid-quarantine/3-tn.webp" alt="Image 3" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="covid-quarantine/4-tn.webp" alt="Image 4" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="covid-quarantine/5-tn.webp" alt="Image 5" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="covid-quarantine/6-tn.webp" alt="Image 6" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="covid-quarantine/7-tn.webp" alt="Image 7" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="covid-quarantine/8-tn.webp" alt="Image 8" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="covid-quarantine/9-tn.webp" alt="Image 9" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="covid-quarantine/10-tn.webp" alt="Image 10" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="covid-quarantine/11-tn.webp" alt="Image 11" onclick="openModal(this)"></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div id="imageModal" class="modal"> 
-      <span class="close-btn" onclick="closeModal()">&times;</span>
-      <img class="modal-content" id="modalImage">
-      <div id="caption"></div>
-  </div>
+  <section class="gallery">
+    <div class="gallery__grid">
+      <div class="gallery__item"><a href="#img0"><img src="covid-quarantine/0-tn.webp" alt="Image 0 - Covid Quarantine"></a></div>
+			<div class="gallery__item"><a href="#img1"><img src="covid-quarantine/1-tn.webp" alt="Image 1 - Covid Quarantine"></a></div>
+			<div class="gallery__item"><a href="#img2"><img src="covid-quarantine/2-tn.webp" alt="Image 2 - Covid Quarantine"></a></div>
+			<div class="gallery__item"><a href="#img3"><img src="covid-quarantine/3-tn.webp" alt="Image 3 - Covid Quarantine"></a></div>
+			<div class="gallery__item"><a href="#img4"><img src="covid-quarantine/4-tn.webp" alt="Image 4 - Covid Quarantine"></a></div>
+			<div class="gallery__item"><a href="#img5"><img src="covid-quarantine/5-tn.webp" alt="Image 5 - Covid Quarantine"></a></div>
+			<div class="gallery__item"><a href="#img6"><img src="covid-quarantine/6-tn.webp" alt="Image 6 - Covid Quarantine"></a></div>
+			<div class="gallery__item"><a href="#img7"><img src="covid-quarantine/7-tn.webp" alt="Image 7 - Covid Quarantine"></a></div>
+			<div class="gallery__item"><a href="#img8"><img src="covid-quarantine/8-tn.webp" alt="Image 8 - Covid Quarantine"></a></div>
+			<div class="gallery__item"><a href="#img9"><img src="covid-quarantine/9-tn.webp" alt="Image 9 - Covid Quarantine"></a></div>
+			<div class="gallery__item"><a href="#img10"><img src="covid-quarantine/10-tn.webp" alt="Image 10 - Covid Quarantine"></a></div>
+			<div class="gallery__item"><a href="#img11"><img src="covid-quarantine/11-tn.webp" alt="Image 11 - Covid Quarantine"></a></div>
+    </div>
+  </section>
   
-  <script>
-      FlexMasonry.init('.grid');
-  </script>
-
+  <header class="header header--series">
+    <nav class="nav nav--series">
+      <h2><a href="index.html" class="nav__link--series"> <strong>&lt;</strong></a></h2>
+    </nav>
+    <div>
+      <h1>Covid Quarantine</h1>
+    <div>
+  </header>
+    
+  
+  <div class="lightbox" id="img0">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="covid-quarantine/0.webp" alt="Image 0 - Covid Quarantine">
+  </div>
+    
+  <div class="lightbox" id="img1">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="covid-quarantine/1.webp" alt="Image 1 - Covid Quarantine">
+  </div>
+    
+  <div class="lightbox" id="img2">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="covid-quarantine/2.webp" alt="Image 2 - Covid Quarantine">
+  </div>
+    
+  <div class="lightbox" id="img3">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="covid-quarantine/3.webp" alt="Image 3 - Covid Quarantine">
+  </div>
+    
+  <div class="lightbox" id="img4">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="covid-quarantine/4.webp" alt="Image 4 - Covid Quarantine">
+  </div>
+    
+  <div class="lightbox" id="img5">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="covid-quarantine/5.webp" alt="Image 5 - Covid Quarantine">
+  </div>
+    
+  <div class="lightbox" id="img6">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="covid-quarantine/6.webp" alt="Image 6 - Covid Quarantine">
+  </div>
+    
+  <div class="lightbox" id="img7">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="covid-quarantine/7.webp" alt="Image 7 - Covid Quarantine">
+  </div>
+    
+  <div class="lightbox" id="img8">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="covid-quarantine/8.webp" alt="Image 8 - Covid Quarantine">
+  </div>
+    
+  <div class="lightbox" id="img9">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="covid-quarantine/9.webp" alt="Image 9 - Covid Quarantine">
+  </div>
+    
+  <div class="lightbox" id="img10">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="covid-quarantine/10.webp" alt="Image 10 - Covid Quarantine">
+  </div>
+    
+  <div class="lightbox" id="img11">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="covid-quarantine/11.webp" alt="Image 11 - Covid Quarantine">
+  </div>
+    
 </body>
 </html>
+    

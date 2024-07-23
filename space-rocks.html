@@ -5,60 +5,170 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="style-flexmasonry.css">
-<script src="script.js"></script>
-
 <title>Space Rocks</title>
 </head>
 <body>
-  <div class="gallery-container">
-    <div class="gallery-sidebar">
-      <a class="home-btn" href="index.html"><</a>
-      <h1>Space Rocks</h1>
-    </div>
-    <div class="gallery-bkgd">
-      <div class="gallery-content">
-        <div class="grid">
-          <div><div class="brick"><img src="space-rocks/0-tn.webp" alt="Image 0" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/1-tn.webp" alt="Image 1" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/2-tn.webp" alt="Image 2" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/3-tn.webp" alt="Image 3" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/4-tn.webp" alt="Image 4" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/5-tn.webp" alt="Image 5" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/6-tn.webp" alt="Image 6" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/7-tn.webp" alt="Image 7" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/8-tn.webp" alt="Image 8" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/9-tn.webp" alt="Image 9" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/10-tn.webp" alt="Image 10" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/11-tn.webp" alt="Image 11" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/12-tn.webp" alt="Image 12" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/13-tn.webp" alt="Image 13" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/14-tn.webp" alt="Image 14" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/15-tn.webp" alt="Image 15" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/16-tn.webp" alt="Image 16" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/17-tn.webp" alt="Image 17" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/18-tn.webp" alt="Image 18" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/19-tn.webp" alt="Image 19" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/20-tn.webp" alt="Image 20" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/21-tn.webp" alt="Image 21" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/22-tn.webp" alt="Image 22" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="space-rocks/23-tn.webp" alt="Image 23" onclick="openModal(this)"></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div id="imageModal" class="modal"> 
-      <span class="close-btn" onclick="closeModal()">&times;</span>
-      <img class="modal-content" id="modalImage">
-      <div id="caption"></div>
-  </div>
+  <section class="gallery">
+    <div class="gallery__grid">
+      <div class="gallery__item"><a href="#img0"><img src="space-rocks/0-tn.webp" alt="Image 0 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img1"><img src="space-rocks/1-tn.webp" alt="Image 1 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img2"><img src="space-rocks/2-tn.webp" alt="Image 2 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img3"><img src="space-rocks/3-tn.webp" alt="Image 3 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img4"><img src="space-rocks/4-tn.webp" alt="Image 4 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img5"><img src="space-rocks/5-tn.webp" alt="Image 5 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img6"><img src="space-rocks/6-tn.webp" alt="Image 6 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img7"><img src="space-rocks/7-tn.webp" alt="Image 7 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img8"><img src="space-rocks/8-tn.webp" alt="Image 8 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img9"><img src="space-rocks/9-tn.webp" alt="Image 9 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img10"><img src="space-rocks/10-tn.webp" alt="Image 10 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img11"><img src="space-rocks/11-tn.webp" alt="Image 11 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img12"><img src="space-rocks/12-tn.webp" alt="Image 12 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img13"><img src="space-rocks/13-tn.webp" alt="Image 13 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img14"><img src="space-rocks/14-tn.webp" alt="Image 14 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img15"><img src="space-rocks/15-tn.webp" alt="Image 15 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img16"><img src="space-rocks/16-tn.webp" alt="Image 16 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img17"><img src="space-rocks/17-tn.webp" alt="Image 17 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img18"><img src="space-rocks/18-tn.webp" alt="Image 18 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img19"><img src="space-rocks/19-tn.webp" alt="Image 19 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img20"><img src="space-rocks/20-tn.webp" alt="Image 20 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img21"><img src="space-rocks/21-tn.webp" alt="Image 21 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img22"><img src="space-rocks/22-tn.webp" alt="Image 22 - Space Rocks"></a></div>
+			<div class="gallery__item"><a href="#img23"><img src="space-rocks/23-tn.webp" alt="Image 23 - Space Rocks"></a></div>
+    </div>
+  </section>
   
-  <script>
-      FlexMasonry.init('.grid');
-  </script>
-
+  <header class="header header--series">
+    <nav class="nav nav--series">
+      <h2><a href="index.html" class="nav__link--series"> <strong>&lt;</strong></a></h2>
+    </nav>
+    <div>
+      <h1>Space Rocks</h1>
+    <div>
+  </header>
+    
+  
+  <div class="lightbox" id="img0">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/0.webp" alt="Image 0 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img1">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/1.webp" alt="Image 1 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img2">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/2.webp" alt="Image 2 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img3">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/3.webp" alt="Image 3 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img4">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/4.webp" alt="Image 4 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img5">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/5.webp" alt="Image 5 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img6">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/6.webp" alt="Image 6 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img7">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/7.webp" alt="Image 7 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img8">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/8.webp" alt="Image 8 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img9">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/9.webp" alt="Image 9 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img10">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/10.webp" alt="Image 10 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img11">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/11.webp" alt="Image 11 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img12">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/12.webp" alt="Image 12 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img13">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/13.webp" alt="Image 13 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img14">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/14.webp" alt="Image 14 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img15">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/15.webp" alt="Image 15 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img16">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/16.webp" alt="Image 16 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img17">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/17.webp" alt="Image 17 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img18">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/18.webp" alt="Image 18 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img19">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/19.webp" alt="Image 19 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img20">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/20.webp" alt="Image 20 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img21">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/21.webp" alt="Image 21 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img22">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/22.webp" alt="Image 22 - Space Rocks">
+  </div>
+    
+  <div class="lightbox" id="img23">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="space-rocks/23.webp" alt="Image 23 - Space Rocks">
+  </div>
+    
 </body>
 </html>
+    
