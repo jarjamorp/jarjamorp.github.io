@@ -5,66 +5,206 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="style-flexmasonry.css">
-<script src="script.js"></script>
-
 <title>Vegemite & Soy Sauce</title>
 </head>
 <body>
-  <div class="gallery-container">
-    <div class="gallery-sidebar">
-      <a class="home-btn" href="index.html"><</a>
-      <h1>Vegemite & Soy Sauce</h1>
-    </div>
-    <div class="gallery-bkgd">
-      <div class="gallery-content">
-        <div class="grid">
-          <div><div class="brick"><img src="veg-soy-sauce/0-tn.webp" alt="Image 0" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/1-tn.webp" alt="Image 1" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/2-tn.webp" alt="Image 2" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/3-tn.webp" alt="Image 3" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/4-tn.webp" alt="Image 4" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/5-tn.webp" alt="Image 5" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/6-tn.webp" alt="Image 6" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/7-tn.webp" alt="Image 7" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/8-tn.webp" alt="Image 8" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/9-tn.webp" alt="Image 9" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/10-tn.webp" alt="Image 10" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/11-tn.webp" alt="Image 11" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/12-tn.webp" alt="Image 12" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/13-tn.webp" alt="Image 13" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/14-tn.webp" alt="Image 14" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/15-tn.webp" alt="Image 15" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/16-tn.webp" alt="Image 16" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/17-tn.webp" alt="Image 17" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/18-tn.webp" alt="Image 18" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/19-tn.webp" alt="Image 19" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/20-tn.webp" alt="Image 20" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/21-tn.webp" alt="Image 21" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/22-tn.webp" alt="Image 22" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/23-tn.webp" alt="Image 23" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/24-tn.webp" alt="Image 24" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/25-tn.webp" alt="Image 25" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/26-tn.webp" alt="Image 26" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/27-tn.webp" alt="Image 27" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/28-tn.webp" alt="Image 28" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="veg-soy-sauce/29-tn.webp" alt="Image 29" onclick="openModal(this)"></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div id="imageModal" class="modal"> 
-      <span class="close-btn" onclick="closeModal()">&times;</span>
-      <img class="modal-content" id="modalImage">
-      <div id="caption"></div>
-  </div>
+  <section class="gallery">
+    <div class="gallery__grid">
+      <div class="gallery__item"><a href="#img0"><img src="veg-soy-sauce/0-tn.webp" alt="Image 0 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img1"><img src="veg-soy-sauce/1-tn.webp" alt="Image 1 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img2"><img src="veg-soy-sauce/2-tn.webp" alt="Image 2 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img3"><img src="veg-soy-sauce/3-tn.webp" alt="Image 3 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img4"><img src="veg-soy-sauce/4-tn.webp" alt="Image 4 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img5"><img src="veg-soy-sauce/5-tn.webp" alt="Image 5 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img6"><img src="veg-soy-sauce/6-tn.webp" alt="Image 6 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img7"><img src="veg-soy-sauce/7-tn.webp" alt="Image 7 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img8"><img src="veg-soy-sauce/8-tn.webp" alt="Image 8 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img9"><img src="veg-soy-sauce/9-tn.webp" alt="Image 9 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img10"><img src="veg-soy-sauce/10-tn.webp" alt="Image 10 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img11"><img src="veg-soy-sauce/11-tn.webp" alt="Image 11 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img12"><img src="veg-soy-sauce/12-tn.webp" alt="Image 12 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img13"><img src="veg-soy-sauce/13-tn.webp" alt="Image 13 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img14"><img src="veg-soy-sauce/14-tn.webp" alt="Image 14 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img15"><img src="veg-soy-sauce/15-tn.webp" alt="Image 15 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img16"><img src="veg-soy-sauce/16-tn.webp" alt="Image 16 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img17"><img src="veg-soy-sauce/17-tn.webp" alt="Image 17 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img18"><img src="veg-soy-sauce/18-tn.webp" alt="Image 18 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img19"><img src="veg-soy-sauce/19-tn.webp" alt="Image 19 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img20"><img src="veg-soy-sauce/20-tn.webp" alt="Image 20 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img21"><img src="veg-soy-sauce/21-tn.webp" alt="Image 21 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img22"><img src="veg-soy-sauce/22-tn.webp" alt="Image 22 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img23"><img src="veg-soy-sauce/23-tn.webp" alt="Image 23 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img24"><img src="veg-soy-sauce/24-tn.webp" alt="Image 24 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img25"><img src="veg-soy-sauce/25-tn.webp" alt="Image 25 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img26"><img src="veg-soy-sauce/26-tn.webp" alt="Image 26 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img27"><img src="veg-soy-sauce/27-tn.webp" alt="Image 27 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img28"><img src="veg-soy-sauce/28-tn.webp" alt="Image 28 - Vegemite & Soy Sauce"></a></div>
+			<div class="gallery__item"><a href="#img29"><img src="veg-soy-sauce/29-tn.webp" alt="Image 29 - Vegemite & Soy Sauce"></a></div>
+    </div>
+  </section>
   
-  <script>
-      FlexMasonry.init('.grid');
-  </script>
-
+  <header class="header header--series">
+    <nav class="nav nav--series">
+      <h2><a href="index.html" class="nav__link--series"> <strong>&lt;</strong></a></h2>
+    </nav>
+    <div>
+      <h1>Vegemite <em>&</em> Soy Sauce</h1>
+    <div>
+  </header>
+    
+  
+  <div class="lightbox" id="img0">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/0.webp" alt="Image 0 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img1">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/1.webp" alt="Image 1 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img2">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/2.webp" alt="Image 2 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img3">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/3.webp" alt="Image 3 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img4">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/4.webp" alt="Image 4 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img5">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/5.webp" alt="Image 5 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img6">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/6.webp" alt="Image 6 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img7">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/7.webp" alt="Image 7 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img8">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/8.webp" alt="Image 8 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img9">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/9.webp" alt="Image 9 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img10">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/10.webp" alt="Image 10 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img11">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/11.webp" alt="Image 11 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img12">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/12.webp" alt="Image 12 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img13">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/13.webp" alt="Image 13 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img14">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/14.webp" alt="Image 14 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img15">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/15.webp" alt="Image 15 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img16">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/16.webp" alt="Image 16 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img17">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/17.webp" alt="Image 17 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img18">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/18.webp" alt="Image 18 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img19">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/19.webp" alt="Image 19 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img20">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/20.webp" alt="Image 20 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img21">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/21.webp" alt="Image 21 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img22">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/22.webp" alt="Image 22 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img23">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/23.webp" alt="Image 23 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img24">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/24.webp" alt="Image 24 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img25">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/25.webp" alt="Image 25 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img26">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/26.webp" alt="Image 26 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img27">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/27.webp" alt="Image 27 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img28">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/28.webp" alt="Image 28 - Vegemite & Soy Sauce">
+  </div>
+    
+  <div class="lightbox" id="img29">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="veg-soy-sauce/29.webp" alt="Image 29 - Vegemite & Soy Sauce">
+  </div>
+    
 </body>
 </html>
+    
