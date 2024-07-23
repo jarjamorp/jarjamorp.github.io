@@ -5,66 +5,179 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="style-flexmasonry.css">
-<script src="script.js"></script>
-
-<title>Beauty Beauty Everywhere</title>
+<title>Beauty, Beauty Everywhere</title>
 </head>
 <body>
-  <div class="gallery-container">
-    <div class="gallery-sidebar">
-      <a class="home-btn" href="index.html"><</a>
-      <h1>Beauty Beauty Everywhere</h1>
-      <p>
-        Beauty beauty everywhere <br>
-        Better take a drink <br>
-        Lest we all forget it's there <br>
-        And wander past the brink <br>
-      </p>
-    </div>
-      <div class="gallery-bkgd">
-        <div class="gallery-content">
-          <div class="grid">
-            <div><div class="brick"><img src="beauty/0-tn.webp" alt="Image 0" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/1-tn.webp" alt="Image 1" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/2-tn.webp" alt="Image 2" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/3-tn.webp" alt="Image 3" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/4-tn.webp" alt="Image 4" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/5-tn.webp" alt="Image 5" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/6-tn.webp" alt="Image 6" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/7-tn.webp" alt="Image 7" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/8-tn.webp" alt="Image 8" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/9-tn.webp" alt="Image 9" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/10-tn.webp" alt="Image 10" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/11-tn.webp" alt="Image 11" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/12-tn.webp" alt="Image 12" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/13-tn.webp" alt="Image 13" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/14-tn.webp" alt="Image 14" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/15-tn.webp" alt="Image 15" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/16-tn.webp" alt="Image 16" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/17-tn.webp" alt="Image 17" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/18-tn.webp" alt="Image 18" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/19-tn.webp" alt="Image 19" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/20-tn.webp" alt="Image 20" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/21-tn.webp" alt="Image 21" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/22-tn.webp" alt="Image 22" onclick="openModal(this)"></div></div>
-            <div><div class="brick"><img src="beauty/23-tn.webp" alt="Image 23" onclick="openModal(this)"></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div id="imageModal" class="modal"> 
-      <span class="close-btn" onclick="closeModal()">&times;</span>
-      <img class="modal-content" id="modalImage">
-      <div id="caption"></div>
-  </div>
+  <section class="gallery">
+    <div class="gallery__grid">
+      <div class="gallery__item"><a href="#img0"><img src="beauty/0-tn.webp" alt="Image 0 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img1"><img src="beauty/1-tn.webp" alt="Image 1 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img2"><img src="beauty/2-tn.webp" alt="Image 2 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img3"><img src="beauty/3-tn.webp" alt="Image 3 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img4"><img src="beauty/4-tn.webp" alt="Image 4 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img5"><img src="beauty/5-tn.webp" alt="Image 5 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img6"><img src="beauty/6-tn.webp" alt="Image 6 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img7"><img src="beauty/7-tn.webp" alt="Image 7 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img8"><img src="beauty/8-tn.webp" alt="Image 8 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img9"><img src="beauty/9-tn.webp" alt="Image 9 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img10"><img src="beauty/10-tn.webp" alt="Image 10 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img11"><img src="beauty/11-tn.webp" alt="Image 11 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img12"><img src="beauty/12-tn.webp" alt="Image 12 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img13"><img src="beauty/13-tn.webp" alt="Image 13 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img14"><img src="beauty/14-tn.webp" alt="Image 14 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img15"><img src="beauty/15-tn.webp" alt="Image 15 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img16"><img src="beauty/16-tn.webp" alt="Image 16 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img17"><img src="beauty/17-tn.webp" alt="Image 17 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img18"><img src="beauty/18-tn.webp" alt="Image 18 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img19"><img src="beauty/19-tn.webp" alt="Image 19 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img20"><img src="beauty/20-tn.webp" alt="Image 20 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img21"><img src="beauty/21-tn.webp" alt="Image 21 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img22"><img src="beauty/22-tn.webp" alt="Image 22 - Beauty, Beauty Everywhere"></a></div>
+			<div class="gallery__item"><a href="#img23"><img src="beauty/23-tn.webp" alt="Image 23 - Beauty, Beauty Everywhere"></a></div>
+    </div>
+  </section>
   
-  <script>
-      FlexMasonry.init('.grid');
-  </script>
+  <header class="header header--series">
+    <nav class="nav nav--series">
+      <h2><a href="index.html" class="nav__link--series"> <strong>&lt;</strong></a></h2>
+    </nav>
+    <div>
+      <h1>Beauty, Beauty Everywhere</h1>
+    <div>
+  </header>
 
+  <article class="post--series">
+    <p>
+      Beauty beauty everywhere <br>
+      Better take a drink <br>
+      Lest we all forget it's there <br>
+      And wander past the brink <br>
+    </p>
+  </article>
+    
+  
+  <div class="lightbox" id="img0">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/0.webp" alt="Image 0 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img1">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/1.webp" alt="Image 1 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img2">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/2.webp" alt="Image 2 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img3">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/3.webp" alt="Image 3 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img4">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/4.webp" alt="Image 4 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img5">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/5.webp" alt="Image 5 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img6">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/6.webp" alt="Image 6 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img7">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/7.webp" alt="Image 7 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img8">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/8.webp" alt="Image 8 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img9">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/9.webp" alt="Image 9 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img10">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/10.webp" alt="Image 10 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img11">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/11.webp" alt="Image 11 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img12">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/12.webp" alt="Image 12 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img13">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/13.webp" alt="Image 13 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img14">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/14.webp" alt="Image 14 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img15">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/15.webp" alt="Image 15 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img16">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/16.webp" alt="Image 16 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img17">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/17.webp" alt="Image 17 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img18">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/18.webp" alt="Image 18 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img19">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/19.webp" alt="Image 19 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img20">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/20.webp" alt="Image 20 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img21">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/21.webp" alt="Image 21 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img22">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/22.webp" alt="Image 22 - Beauty, Beauty Everywhere">
+  </div>
+    
+  <div class="lightbox" id="img23">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="beauty/23.webp" alt="Image 23 - Beauty, Beauty Everywhere">
+  </div>
+    
 </body>
 </html>
+    

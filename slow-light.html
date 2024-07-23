@@ -5,72 +5,242 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="style-flexmasonry.css">
-<script src="script.js"></script>
-
 <title>Slow Light</title>
 </head>
 <body>
-  <div class="gallery-container">
-    <div class="gallery-sidebar">
-      <a class="home-btn" href="index.html"><</a>
-      <h1>Slow Light</h1>
-    </div>
-    <div class="gallery-bkgd">
-      <div class="gallery-content">
-        <div class="grid">
-          <div><div class="brick"><img src="slow-light/0-tn.webp" alt="Image 0" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/1-tn.webp" alt="Image 1" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/2-tn.webp" alt="Image 2" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/3-tn.webp" alt="Image 3" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/4-tn.webp" alt="Image 4" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/5-tn.webp" alt="Image 5" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/6-tn.webp" alt="Image 6" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/7-tn.webp" alt="Image 7" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/8-tn.webp" alt="Image 8" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/9-tn.webp" alt="Image 9" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/10-tn.webp" alt="Image 10" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/11-tn.webp" alt="Image 11" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/12-tn.webp" alt="Image 12" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/13-tn.webp" alt="Image 13" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/14-tn.webp" alt="Image 14" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/15-tn.webp" alt="Image 15" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/16-tn.webp" alt="Image 16" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/17-tn.webp" alt="Image 17" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/18-tn.webp" alt="Image 18" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/19-tn.webp" alt="Image 19" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/20-tn.webp" alt="Image 20" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/21-tn.webp" alt="Image 21" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/22-tn.webp" alt="Image 22" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/23-tn.webp" alt="Image 23" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/24-tn.webp" alt="Image 24" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/25-tn.webp" alt="Image 25" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/26-tn.webp" alt="Image 26" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/27-tn.webp" alt="Image 27" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/28-tn.webp" alt="Image 28" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/29-tn.webp" alt="Image 29" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/30-tn.webp" alt="Image 30" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/31-tn.webp" alt="Image 31" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/32-tn.webp" alt="Image 32" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/33-tn.webp" alt="Image 33" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/34-tn.webp" alt="Image 34" onclick="openModal(this)"></div></div>
-          <div><div class="brick"><img src="slow-light/35-tn.webp" alt="Image 35" onclick="openModal(this)"></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div id="imageModal" class="modal"> 
-      <span class="close-btn" onclick="closeModal()">&times;</span>
-      <img class="modal-content" id="modalImage">
-      <div id="caption"></div>
-  </div>
+  <section class="gallery">
+    <div class="gallery__grid">
+      <div class="gallery__item"><a href="#img0"><img src="slow-light/0-tn.webp" alt="Image 0 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img1"><img src="slow-light/1-tn.webp" alt="Image 1 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img2"><img src="slow-light/2-tn.webp" alt="Image 2 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img3"><img src="slow-light/3-tn.webp" alt="Image 3 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img4"><img src="slow-light/4-tn.webp" alt="Image 4 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img5"><img src="slow-light/5-tn.webp" alt="Image 5 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img6"><img src="slow-light/6-tn.webp" alt="Image 6 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img7"><img src="slow-light/7-tn.webp" alt="Image 7 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img8"><img src="slow-light/8-tn.webp" alt="Image 8 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img9"><img src="slow-light/9-tn.webp" alt="Image 9 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img10"><img src="slow-light/10-tn.webp" alt="Image 10 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img11"><img src="slow-light/11-tn.webp" alt="Image 11 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img12"><img src="slow-light/12-tn.webp" alt="Image 12 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img13"><img src="slow-light/13-tn.webp" alt="Image 13 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img14"><img src="slow-light/14-tn.webp" alt="Image 14 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img15"><img src="slow-light/15-tn.webp" alt="Image 15 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img16"><img src="slow-light/16-tn.webp" alt="Image 16 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img17"><img src="slow-light/17-tn.webp" alt="Image 17 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img18"><img src="slow-light/18-tn.webp" alt="Image 18 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img19"><img src="slow-light/19-tn.webp" alt="Image 19 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img20"><img src="slow-light/20-tn.webp" alt="Image 20 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img21"><img src="slow-light/21-tn.webp" alt="Image 21 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img22"><img src="slow-light/22-tn.webp" alt="Image 22 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img23"><img src="slow-light/23-tn.webp" alt="Image 23 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img24"><img src="slow-light/24-tn.webp" alt="Image 24 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img25"><img src="slow-light/25-tn.webp" alt="Image 25 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img26"><img src="slow-light/26-tn.webp" alt="Image 26 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img27"><img src="slow-light/27-tn.webp" alt="Image 27 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img28"><img src="slow-light/28-tn.webp" alt="Image 28 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img29"><img src="slow-light/29-tn.webp" alt="Image 29 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img30"><img src="slow-light/30-tn.webp" alt="Image 30 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img31"><img src="slow-light/31-tn.webp" alt="Image 31 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img32"><img src="slow-light/32-tn.webp" alt="Image 32 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img33"><img src="slow-light/33-tn.webp" alt="Image 33 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img34"><img src="slow-light/34-tn.webp" alt="Image 34 - Slow Light"></a></div>
+			<div class="gallery__item"><a href="#img35"><img src="slow-light/35-tn.webp" alt="Image 35 - Slow Light"></a></div>
+    </div>
+  </section>
   
-  <script>
-      FlexMasonry.init('.grid');
-  </script>
-
+  <header class="header header--series">
+    <nav class="nav nav--series">
+      <h2><a href="index.html" class="nav__link--series"> <strong>&lt;</strong></a></h2>
+    </nav>
+    <div>
+      <h1>Slow Light</h1>
+    <div>
+  </header>
+    
+  
+  <div class="lightbox" id="img0">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/0.webp" alt="Image 0 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img1">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/1.webp" alt="Image 1 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img2">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/2.webp" alt="Image 2 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img3">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/3.webp" alt="Image 3 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img4">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/4.webp" alt="Image 4 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img5">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/5.webp" alt="Image 5 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img6">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/6.webp" alt="Image 6 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img7">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/7.webp" alt="Image 7 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img8">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/8.webp" alt="Image 8 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img9">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/9.webp" alt="Image 9 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img10">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/10.webp" alt="Image 10 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img11">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/11.webp" alt="Image 11 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img12">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/12.webp" alt="Image 12 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img13">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/13.webp" alt="Image 13 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img14">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/14.webp" alt="Image 14 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img15">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/15.webp" alt="Image 15 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img16">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/16.webp" alt="Image 16 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img17">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/17.webp" alt="Image 17 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img18">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/18.webp" alt="Image 18 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img19">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/19.webp" alt="Image 19 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img20">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/20.webp" alt="Image 20 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img21">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/21.webp" alt="Image 21 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img22">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/22.webp" alt="Image 22 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img23">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/23.webp" alt="Image 23 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img24">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/24.webp" alt="Image 24 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img25">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/25.webp" alt="Image 25 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img26">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/26.webp" alt="Image 26 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img27">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/27.webp" alt="Image 27 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img28">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/28.webp" alt="Image 28 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img29">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/29.webp" alt="Image 29 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img30">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/30.webp" alt="Image 30 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img31">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/31.webp" alt="Image 31 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img32">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/32.webp" alt="Image 32 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img33">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/33.webp" alt="Image 33 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img34">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/34.webp" alt="Image 34 - Slow Light">
+  </div>
+    
+  <div class="lightbox" id="img35">
+    <a href="#" class="lightbox__close">&times;</a>
+    <img src="slow-light/35.webp" alt="Image 35 - Slow Light">
+  </div>
+    
 </body>
 </html>
+    
