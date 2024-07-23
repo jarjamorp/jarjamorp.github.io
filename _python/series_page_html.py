@@ -3,11 +3,7 @@ import os
 def generate_image_divs(title, foldername, number_of_images):
     """Generates image container divs with images for a given range."""
     template = """
-    <section class="gallery">
-      <div class="gallery__grid">
-        <div class="gallery__item"><a href="#img{num}"><img src="{foldername}/{num}-tn.webp" alt="Image {num} - {title}"></a></div>
-      </div>
-    </section>
+      <div class="gallery__item"><a href="#img{num}"><img src="{foldername}/{num}-tn.webp" alt="Image {num} - {title}"></a></div>
     """
     return ''.join([template.format(title=title, foldername=foldername, num=i) for i in range(number_of_images)])  # range(1, number_of_images + 1)
 
@@ -51,9 +47,13 @@ def create_html_content(title, foldername, number_of_images):
 <title>{title}</title>
 </head>
 <body>
-  
-  {gallery_divs}
-  
+
+  <section class="gallery">
+    <div class="gallery__grid">
+      {gallery_divs}
+    </div>
+  </section>
+
   {lightbox_divs}
 
   {header_div}
@@ -74,20 +74,20 @@ def count_files_in_folders(base_directory, folder_names):
   return file_counts
 
 def main():
-  # base_directory = 'C:\\projects\\website-personal'
-  # folder_names = ['autumn', 'beauty', 'blue','clouds-wondrous-clouds', 'could-have', 'covid-quarantine',
-  #                 'dead-of-night', 'figuring', 'graphic-accidents','merica', 'not-a-photo', 
-  #                 'patterns-amsterdam','patterns-london', 'patterns-taipei', 'plane-crash','pointless-shapes',
-  #                 'rust', 'self-portraits', 'slow-light', 'space-rocks', 'spring', 'stream-as-sculptor',
-  #                 'surf', 'trash-treasure', 'veg-soy-sauce']
-  # page_titles = ['Autumn', 'Beauty, Beauty Everywhere', 'Blue', 'Clouds, Wondrous Clouds', 'I Could Have Done That',
-  #                'Covid Quarantine', 'Dead of Night', 'Figuring', 'Graphic Accidents', 'Merica', 'Not a Photo',
-  #                'Patterns: Amsterdam', 'Patterns: London', 'Patterns: Taipei', 'Plane Crash', 'Pointless Shapes',
-  #                'Rust', 'Self Portraits', 'Slow Light', 'Space Rocks', 'Spring', 'Stream As Sculpture',
-  #                'Surfing = Fun', 'Trash/Treasure', 'Vegemite & Soy Sauce']
-  base_directory = 'C:\\Users\\harra\\Downloads\\website-test'
-  folder_names = ['autumn', 'dead-of-night']
-  page_titles = ['Autumn', 'Dead of Night']
+  base_directory = 'C:\\projects\\website-personal'
+  folder_names = ['autumn', 'beauty', 'blue','clouds-wondrous-clouds', 'could-have', 'covid-quarantine',
+                  'dead-of-night', 'figuring', 'graphic-accidents','merica', 'not-a-photo', 
+                  'patterns-amsterdam','patterns-london', 'patterns-taipei', 'plane-crash','pointless-shapes',
+                  'rust', 'self-portraits', 'slow-light', 'space-rocks', 'spring', 'stream-as-sculptor',
+                  'surf', 'trash-treasure', 'veg-soy-sauce']
+  page_titles = ['Autumn', 'Beauty, Beauty Everywhere', 'Blue', 'Clouds, Wondrous Clouds', 'I Could Have Done That',
+                 'Covid Quarantine', 'Dead of Night', 'Figuring', 'Graphic Accidents', 'Merica', 'Not a Photo',
+                 'Patterns: Amsterdam', 'Patterns: London', 'Patterns: Taipei', 'Plane Crash', 'Pointless Shapes',
+                 'Rust', 'Self Portraits', 'Slow Light', 'Space Rocks', 'Spring', 'Stream As Sculpture',
+                 'Surfing = Fun', 'Trash/Treasure', 'Vegemite & Soy Sauce']
+  # base_directory = 'C:\\Users\\harra\\Downloads\\website-test'
+  # folder_names = ['autumn', 'dead-of-night']
+  # page_titles = ['Autumn', 'Dead of Night']
   file_counts = count_files_in_folders(base_directory, folder_names)
   
   """Main function to write the HTML content to a file."""
