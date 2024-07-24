@@ -25,7 +25,7 @@ PAGE_TITLES = [
     'Graphic Accidents', 'Merica', 'Not a Photo', 'Patterns: Amsterdam', 
     'Patterns: London', 'Patterns: Taipei', 'Plane Crash', 'Pointless Shapes', 
     'Rust', 'Self Portraits', 'Slow Light', 'Space Rocks', 'Spring', 
-    'Stream As Sculptor', 'Surfing = Fun', 'Trash/Treasure', 'Vegemite & Soy Sauce'
+    'Stream As Sculptor', 'Surfing', 'Trash/Treasure', 'Vegemite & Soy Sauce'
 ]
     
 def generate_image_divs(title, foldername, number_of_images):
