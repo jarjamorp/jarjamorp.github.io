@@ -1,32 +1,32 @@
 import os
 
 # Configuration
-# BASE_DIRECTORY = 'C:\\projects\\website-personal'
+BASE_DIRECTORY = 'C:\\projects\\orph.in'
 # BASE_DIRECTORY = 'C:\\Users\\harra\\Downloads\\website-test'
-# FOLDER_NAMES = [
-#     'autumn'
-# ]
-# PAGE_TITLES = [
-#     'Autumn'
-# ]
-
-BASE_DIRECTORY = 'C:\\Users\\harra\\Downloads\\website-personal'
 FOLDER_NAMES = [
-    'autumn', 'beauty', 'blue', 'clouds-wondrous-clouds', 'could-have', 
-    'covid-quarantine', 'dead-of-night', 'figuring', 'graphic-accidents', 
-    'merica', 'not-a-photo', 'patterns-amsterdam', 'patterns-london', 
-    'patterns-taipei', 'plane-crash', 'pointless-shapes', 'rust', 
-    'self-portraits', 'slow-light', 'space-rocks', 'spring', 
-    'stream-as-sculptor', 'surf', 'trash-treasure', 'veg-soy-sauce'
+    'slow'
 ]
 PAGE_TITLES = [
-    'Autumn', 'Beauty, Beauty Everywhere', 'Blue', 'Clouds, Wondrous Clouds', 
-    'I Could Have Done That', 'Covid Quarantine', 'Dead of Night', 'Figuring', 
-    'Graphic Accidents', 'Merica', 'Not a Photo', 'Patterns: Amsterdam', 
-    'Patterns: London', 'Patterns: Taipei', 'Plane Crash', 'Pointless Shapes', 
-    'Rust', 'Self Portraits', 'Slow Light', 'Space Rocks', 'Spring', 
-    'Stream As Sculptor', 'Surfing', 'Trash/Treasure', 'Vegemite & Soy Sauce'
+    'Slow'
 ]
+
+# BASE_DIRECTORY = 'C:\\Users\\harra\\Downloads\\website-personal'
+# FOLDER_NAMES = [
+#     'autumn', 'beauty', 'blue', 'clouds-wondrous-clouds', 'could-have', 
+#     'covid-quarantine', 'dead-of-night', 'figuring', 'graphic-accidents', 
+#     'merica', 'not-a-photo', 'patterns-amsterdam', 'patterns-london', 
+#     'patterns-taipei', 'plane-crash', 'pointless-shapes', 'rust', 
+#     'self-portraits', 'slow', 'slow-light', 'space-rocks', 'spring', 
+#     'stream-as-sculptor', 'surf', 'trash-treasure', 'veg-soy-sauce'
+# ]
+# PAGE_TITLES = [
+#     'Autumn', 'Beauty, Beauty Everywhere', 'Blue', 'Clouds, Wondrous Clouds', 
+#     'I Could Have Done That', 'Covid Quarantine', 'Dead of Night', 'Figuring', 
+#     'Graphic Accidents', 'Merica', 'Not a Photo', 'Patterns: Amsterdam', 
+#     'Patterns: London', 'Patterns: Taipei', 'Plane Crash', 'Pointless Shapes', 
+#     'Rust', 'Self Portraits', 'Slow', 'Slow Light', 'Space Rocks', 'Spring', 
+#     'Stream As Sculptor', 'Surfing', 'Trash/Treasure', 'Vegemite & Soy Sauce'
+# ]
     
 def generate_image_divs(title, foldername, number_of_images):
     template = '<div class="gallery__item"><a href="#img{num}"><img src="{foldername}/{num}-tn.webp" alt="Image {num} - {title}"></a></div>'

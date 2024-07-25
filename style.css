@@ -23,6 +23,10 @@ h3 {
 p {
   font-size: 19px;
 }
+video {
+  border: 1px solid lightgray;
+  width: 600px;
+}
 
 /*--------- INDEX/HOME PAGE ----------*/
 
@@ -59,12 +63,14 @@ p {
 }
 .gallery {
   width: auto;
-  height: 88vh; 
+  height: 87vh; 
   margin: 30px 30px 0 30px;
   background-color: black;
   overflow-y: scroll;
   border-radius: 15px;
   scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
 }
 .gallery--white-theme {
   background-color: white;
@@ -73,8 +79,10 @@ p {
 .gallery__grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 20px;
+  justify-content: space-around; 
+  align-content: space-around;
+  margin: 25px;
+  flex-grow: 1;
 }
 .gallery__grid--single {
   margin: 0;
@@ -83,7 +91,8 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 25px;
+  flex-grow: 1;
 }
 .gallery__item--single {
   padding: 0;
@@ -117,7 +126,7 @@ p {
   display: none;
   position: fixed;
   width: calc(100% - 60px);
-  height: 88vh; 
+  height: 87vh; 
   margin: 30px 30px 0 30px;
   background-color: black;
   justify-content: center;
@@ -160,4 +169,7 @@ p {
     font-size: 1.5em;
     padding: 0px 20px;
   }  
+  video {
+    width: 90%;
+  }
 }
