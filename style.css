@@ -172,4 +172,8 @@ video {
   video {
     width: 90%;
   }
+  .page-links__link {
+    font-size: 2em;
+    padding: 0px 20px;
+  }
 }
