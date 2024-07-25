@@ -3,18 +3,18 @@ from PIL import Image
 
 # Constants
 # BASE_DIRECTORY = 'C:\\projects\\website-personal'
-BASE_DIRECTORY = 'C:\\Users\\harra\\Downloads\\website-personal'
-# FOLDER_NAMES = [
-#     'autumn'
-# ]
+BASE_DIRECTORY = 'C:\\Users\\harra\\Downloads\\test'
 FOLDER_NAMES = [
-    'autumn', 'beauty', 'blue', 'clouds-wondrous-clouds', 'could-have', 
-    'covid-quarantine', 'dead-of-night', 'figuring', 'graphic-accidents', 
-    'merica', 'not-a-photo', 'patterns-amsterdam', 'patterns-london', 
-    'patterns-taipei', 'plane-crash', 'pointless-shapes', 'rust', 
-    'self-portraits', 'slow-light', 'space-rocks', 'spring', 
-    'stream-as-sculptor', 'surf', 'trash-treasure', 'veg-soy-sauce'
+    'slow'
 ]
+# FOLDER_NAMES = [
+#     'autumn', 'beauty', 'blue', 'clouds-wondrous-clouds', 'could-have', 
+#     'covid-quarantine', 'dead-of-night', 'figuring', 'graphic-accidents', 
+#     'merica', 'not-a-photo', 'patterns-amsterdam', 'patterns-london', 
+#     'patterns-taipei', 'plane-crash', 'pointless-shapes', 'rust', 
+#     'self-portraits', 'slow-light', 'space-rocks', 'spring', 
+#     'stream-as-sculptor', 'surf', 'trash-treasure', 'veg-soy-sauce'
+# ]
 
 def convert_to_webp(directory):
     counter = 0  # Initialize counter for prefixing filenames
