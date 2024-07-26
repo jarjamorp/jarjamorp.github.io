@@ -153,6 +153,17 @@ video {
 /*--------- MOBILE RESPONSIVE ----------*/
 
 @media (max-width: 600px) {
+  h1 { 
+    font-size: 2em;
+    margin: 20px 60px 20px 60px;
+    line-height: 1;
+  }
+  .gallery {
+    margin: 10px 10px 0 10px;
+  }
+  .gallery__grid {
+    margin: 5px;
+  }
   .gallery__item {
     padding: 10px;
   }
@@ -175,5 +186,8 @@ video {
   .page-links__link {
     font-size: 2em;
     padding: 0px 20px;
+  }
+  .nav--series {
+    left: 10px;
   }
 }
