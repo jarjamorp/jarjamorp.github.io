@@ -160,7 +160,7 @@ video {
   }
   .gallery {
     margin: 10px 10px 0 10px;
-    height: 70vh;
+    height: 75vh;
   }
   .gallery__grid {
     margin: 5px;
@@ -194,6 +194,6 @@ video {
   .lightbox {
     margin: 10px 10px 0 10px;
     width: calc(100% - 20px);
-    height: 70vh;
+    height: 75vh;
   }
 }
