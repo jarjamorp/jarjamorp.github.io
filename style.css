@@ -28,6 +28,9 @@ video {
   border: 1px solid lightgray;
   width: 600px;
 }
+ol {
+  font-size: 19px;
+}
 
 /*--------- INDEX/HOME PAGE ----------*/
 
@@ -167,6 +170,12 @@ video {
   font-size: 3em;
   color: lightgray;
   text-decoration: none;
+}
+.lightbox__text {
+  position: absolute;
+  top: 5px;
+  color: white;
+  font-size: 16px;
 }
 
 /*--------- MOBILE RESPONSIVE ----------*/
