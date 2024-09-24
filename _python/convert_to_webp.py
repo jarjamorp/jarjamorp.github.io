@@ -2,10 +2,10 @@ import os
 from PIL import Image
 
 # Constants
-# BASE_DIRECTORY = 'C:\\projects\\website-personal'
-BASE_DIRECTORY = 'C:\\Users\\harra\\Downloads\\test'
+BASE_DIRECTORY = r"C:\Users\harra\Downloads"
+# BASE_DIRECTORY = 'C:\\Users\\harra\\Downloads\\test'
 FOLDER_NAMES = [
-    'slow'
+    'gen-daily'
 ]
 # FOLDER_NAMES = [
 #     'autumn', 'beauty', 'blue', 'clouds-wondrous-clouds', 'could-have', 
@@ -19,7 +19,7 @@ FOLDER_NAMES = [
 def convert_to_webp(directory):
     counter = 0  # Initialize counter for prefixing filenames
     lst = os.listdir(directory)
-    lst.sort(key=lambda f: int(''.join(filter(str.isdigit, f))))  # Sort ascending
+    # lst.sort(key=lambda f: int(''.join(filter(str.isdigit, f))))  # Sort ascending
     
     # Check if the directory has any .webp files
     has_webp_files = any(filename.lower().endswith(".webp") for filename in lst)
