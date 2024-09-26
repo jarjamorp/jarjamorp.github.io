@@ -137,9 +137,9 @@ def main():
     index_html_path = "trending.html"
        
     # Generate the image and get the timestamped filenames
-    # large_filename, thumb_filename = generate_image(prompt, os.path.join(TRENDING_PATH, image_filename))
-    large_filename = "img_020240923_195518.webp"
-    thumb_filename = "img_020240923_195518-tn.webp"
+    large_filename, thumb_filename = generate_image(prompt, os.path.join(TRENDING_PATH, image_filename))
+    # large_filename = "img_020240923_195518.webp"
+    # thumb_filename = "img_020240923_195518-tn.webp"
 
     # Update the HTML file with both images
     update_index_html(large_filename, thumb_filename, index_html_path, prompt, search_term)
