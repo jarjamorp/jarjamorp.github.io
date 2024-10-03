@@ -5,10 +5,9 @@ import requests
 import subprocess
 import re
 from datetime import datetime
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 import io
 from pytrends.request import TrendReq
-from PIL import Image, ImageDraw, ImageFont
 
 # Configure logging
 logging.basicConfig(filename='script.log', level=logging.INFO)
