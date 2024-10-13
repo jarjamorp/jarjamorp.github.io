@@ -223,3 +223,6 @@ Traceback (most recent call last):
   File "C:\ProgramData\anaconda3\lib\site-packages\requests\adapters.py", line 565, in send
     raise ConnectionError(e, request=request)
 requests.exceptions.ConnectionError: HTTPSConnectionPool(host='trends.google.com', port=443): Max retries exceeded with url: /trends/explore/?geo=US (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000024DE184D5D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+Search term:  Alabama football
+image generated C:\projects\orph.in\jarjamorp.github.io\trending\img_020241012_220907.webp
+Updated C:\projects\orph.in\jarjamorp.github.io\trending.html
