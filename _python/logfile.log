@@ -161,3 +161,65 @@ Updated C:\projects\orph.in\jarjamorp.github.io\trending.html
 Search term:  Oregon football
 image generated C:\projects\orph.in\jarjamorp.github.io\trending\img_020241004_235916.webp
 Updated C:\projects\orph.in\jarjamorp.github.io\trending.html
+Search term:  Alabama football
+image generated C:\projects\orph.in\jarjamorp.github.io\trending\img_020241005_235916.webp
+Updated C:\projects\orph.in\jarjamorp.github.io\trending.html
+Traceback (most recent call last):
+  File "C:\ProgramData\anaconda3\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\ProgramData\anaconda3\lib\site-packages\urllib3\util\connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\ProgramData\anaconda3\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\ProgramData\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "C:\ProgramData\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "C:\ProgramData\anaconda3\lib\site-packages\urllib3\connection.py", line 358, in connect
+    self.sock = conn = self._new_conn()
+  File "C:\ProgramData\anaconda3\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x0000024DE184D5D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\anaconda3\lib\site-packages\requests\adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "C:\ProgramData\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "C:\ProgramData\anaconda3\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='trends.google.com', port=443): Max retries exceeded with url: /trends/explore/?geo=US (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000024DE184D5D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\projects\orph.in\jarjamorp.github.io\_python\trending.py", line 148, in <module>
+    main()
+  File "C:\projects\orph.in\jarjamorp.github.io\_python\trending.py", line 132, in main
+    search_term = get_top_trending_search_term()
+  File "C:\projects\orph.in\jarjamorp.github.io\_python\trending.py", line 26, in get_top_trending_search_term
+    pytrends = TrendReq()
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\pytrends\request.py", line 56, in __init__
+    self.cookies = self.GetGoogleCookie()
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\pytrends\request.py", line 88, in GetGoogleCookie
+    return dict(filter(lambda i: i[0] == 'NID', requests.get(
+  File "C:\ProgramData\anaconda3\lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\ProgramData\anaconda3\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\ProgramData\anaconda3\lib\site-packages\requests\sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\ProgramData\anaconda3\lib\site-packages\requests\sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\ProgramData\anaconda3\lib\site-packages\requests\adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='trends.google.com', port=443): Max retries exceeded with url: /trends/explore/?geo=US (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000024DE184D5D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
