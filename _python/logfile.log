@@ -253,3 +253,40 @@ Updated C:\projects\orph.in\jarjamorp.github.io\trending.html
 Search term:  Ravens vs Buccaneers
 image generated C:\projects\orph.in\jarjamorp.github.io\trending\img_020241021_210215.webp
 Updated C:\projects\orph.in\jarjamorp.github.io\trending.html
+Search term:  DeAndre Hopkins
+image generated C:\projects\orph.in\jarjamorp.github.io\trending\img_020241023_191329.webp
+Updated C:\projects\orph.in\jarjamorp.github.io\trending.html
+Search term:  Menendez brothers
+Traceback (most recent call last):
+  File "C:\projects\orph.in\jarjamorp.github.io\_python\trending.py", line 148, in <module>
+    main()
+  File "C:\projects\orph.in\jarjamorp.github.io\_python\trending.py", line 139, in main
+    large_filename, thumb_filename = generate_image(prompt, os.path.join(TRENDING_PATH, image_filename))
+  File "C:\projects\orph.in\jarjamorp.github.io\_python\trending.py", line 33, in generate_image
+    response = client.images.generate(
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\openai\resources\images.py", line 264, in generate
+    return self._post(
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\openai\_base_client.py", line 1268, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\openai\_base_client.py", line 945, in request
+    return self._request(
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\openai\_base_client.py", line 1049, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'code': 'content_policy_violation', 'message': 'Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system.', 'param': None, 'type': 'invalid_request_error'}}
+Search term:  Menendez brothers
+Traceback (most recent call last):
+  File "C:\projects\orph.in\jarjamorp.github.io\_python\trending.py", line 148, in <module>
+    main()
+  File "C:\projects\orph.in\jarjamorp.github.io\_python\trending.py", line 139, in main
+    large_filename, thumb_filename = generate_image(prompt, os.path.join(TRENDING_PATH, image_filename))
+  File "C:\projects\orph.in\jarjamorp.github.io\_python\trending.py", line 33, in generate_image
+    response = client.images.generate(
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\openai\resources\images.py", line 264, in generate
+    return self._post(
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\openai\_base_client.py", line 1268, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\openai\_base_client.py", line 945, in request
+    return self._request(
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\openai\_base_client.py", line 1049, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'code': 'content_policy_violation', 'message': 'Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system.', 'param': None, 'type': 'invalid_request_error'}}
