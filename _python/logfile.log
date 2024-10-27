@@ -290,3 +290,6 @@ Traceback (most recent call last):
   File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\openai\_base_client.py", line 1049, in _request
     raise self._make_status_error_from_response(err.response) from None
 openai.BadRequestError: Error code: 400 - {'error': {'code': 'content_policy_violation', 'message': 'Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system.', 'param': None, 'type': 'invalid_request_error'}}
+Search term:  World Series
+image generated C:\projects\orph.in\jarjamorp.github.io\trending\img_020241025_235916.webp
+Updated C:\projects\orph.in\jarjamorp.github.io\trending.html
