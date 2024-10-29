@@ -293,3 +293,6 @@ openai.BadRequestError: Error code: 400 - {'error': {'code': 'content_policy_vio
 Search term:  World Series
 image generated C:\projects\orph.in\jarjamorp.github.io\trending\img_020241025_235916.webp
 Updated C:\projects\orph.in\jarjamorp.github.io\trending.html
+Search term:  Celtics
+image generated C:\projects\orph.in\jarjamorp.github.io\trending\img_020241027_123039.webp
+Updated C:\projects\orph.in\jarjamorp.github.io\trending.html
