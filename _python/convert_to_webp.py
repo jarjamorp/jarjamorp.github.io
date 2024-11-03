@@ -2,10 +2,11 @@ import os
 from PIL import Image
 
 # Constants
-BASE_DIRECTORY = r"C:\Users\harra\Downloads"
+# BASE_DIRECTORY = r"C:\Users\harra\Downloads"
+BASE_DIRECTORY = r"C:\projects\website-content"
 # BASE_DIRECTORY = 'C:\\Users\\harra\\Downloads\\test'
 FOLDER_NAMES = [
-    'experiments'
+    'topanga-garden'
 ]
 # FOLDER_NAMES = [
 #     'autumn', 'beauty', 'blue', 'clouds-wondrous-clouds', 'could-have', 
@@ -45,7 +46,7 @@ def convert_to_webp(directory):
                         # Save the thumbnail in .webp format with numbered prefix
                         thumbnail_webp_path = os.path.join(directory, f"{counter}-tn.webp")
                         thumbnail_img.save(thumbnail_webp_path, "WEBP")
-                        print(f"Created thumbnail {thumbnail_webp_path}")
+                        print(f"Created thumbnail {thumbnail_webp_path[-10:]}")
                         counter += 1  # Increment counter for the next filename
             except Exception as e:
                 print(f"Error processing {filename}: {e}")
@@ -70,7 +71,7 @@ def convert_to_webp(directory):
                         thumbnail_webp_path = os.path.join(directory, f"{counter}-tn.webp")
                         img.save(large_webp_path, "WEBP")
                         thumbnail_img.save(thumbnail_webp_path, "WEBP")
-                        print(f"Converted {large_webp_path} and {thumbnail_webp_path}")
+                        print(f"Converted {large_webp_path[-10:]} and {thumbnail_webp_path[-10:]}")
                         counter += 1  # Increment counter for the next filename
             except Exception as e:
                 print(f"Error processing {filename}: {e}")
