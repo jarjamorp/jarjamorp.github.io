@@ -5,7 +5,7 @@ from PIL import Image
 BASE_DIRECTORY = r"C:\Users\harra\Downloads"
 # BASE_DIRECTORY = 'C:\\Users\\harra\\Downloads\\test'
 FOLDER_NAMES = [
-    'gen-daily'
+    'experiments'
 ]
 # FOLDER_NAMES = [
 #     'autumn', 'beauty', 'blue', 'clouds-wondrous-clouds', 'could-have', 
@@ -56,7 +56,7 @@ def convert_to_webp(directory):
                 filepath = os.path.join(directory, filename)
 
                 # Check for the required extensions (both lowercase and uppercase)
-                if file_extension.lower() in [".jpg", ".jpeg", ".png"]:
+                if file_extension in [".jpg", ".jpeg", ".JPG", ".PNG", ".png"]:
                     with Image.open(filepath) as img:
                         # Resize the image maintaining the aspect ratio
                         aspect_ratio = img.height / img.width
