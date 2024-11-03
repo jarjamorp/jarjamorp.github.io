@@ -140,7 +140,12 @@ ol {
 #pop-pyramids img {
   border: none;
 }
-
+#panos--long img {
+  width: 100%;
+}
+#panos--tall img {
+  height: 100%;
+}
 
 /*--------- ENLARGE IMAGES ----------*/
 
@@ -223,5 +228,11 @@ ol {
     margin: 10px 10px 0 10px;
     width: calc(100% - 20px);
     height: 75vh;
+  }
+  #panos--long img {
+    max-width: 500px;
+  }
+  #panos--tall img {
+    max-height: 200px;
   }
 }

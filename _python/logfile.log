@@ -443,3 +443,6 @@ Traceback (most recent call last):
   File "C:\ProgramData\anaconda3\lib\site-packages\requests\adapters.py", line 547, in send
     raise ConnectionError(err, request=request)
 requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+Search term:  Penn State football
+image generated C:\projects\orph.in\jarjamorp.github.io\trending\img_020241102_235919.webp
+Updated C:\projects\orph.in\jarjamorp.github.io\trending.html
