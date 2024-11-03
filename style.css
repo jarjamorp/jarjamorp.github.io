@@ -47,6 +47,11 @@ ol {
   text-decoration: none;
   color: inherit;
 }
+.page-links__link img {
+  margin-right: 20px;
+  border: 1px solid black;
+  max-height: 75px;
+}
 
 /*--------- SERIES PAGE ----------*/
 
@@ -218,8 +223,12 @@ ol {
     width: 90%;
   }
   .page-links__link {
-    font-size: 2em;
+    font-size: 1.3em;
     padding: 0px 20px;
+  }
+  .page-links__link img {
+    margin-right: 10px;
+    max-height: 20px;
   }
   .nav--series {
     left: 10px;
