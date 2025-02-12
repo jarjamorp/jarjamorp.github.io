@@ -1489,3 +1489,133 @@ Traceback (most recent call last):
   File "C:\ProgramData\anaconda3\lib\site-packages\requests\adapters.py", line 565, in send
     raise ConnectionError(e, request=request)
 requests.exceptions.ConnectionError: HTTPSConnectionPool(host='trends.google.com', port=443): Max retries exceeded with url: /trends/explore/?geo=US (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000020958872230>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+Traceback (most recent call last):
+  File "C:\ProgramData\anaconda3\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\ProgramData\anaconda3\lib\site-packages\urllib3\util\connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\ProgramData\anaconda3\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\ProgramData\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "C:\ProgramData\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "C:\ProgramData\anaconda3\lib\site-packages\urllib3\connection.py", line 358, in connect
+    self.sock = conn = self._new_conn()
+  File "C:\ProgramData\anaconda3\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x000001D75B9F2230>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\anaconda3\lib\site-packages\requests\adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "C:\ProgramData\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "C:\ProgramData\anaconda3\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='trends.google.com', port=443): Max retries exceeded with url: /trends/explore/?geo=US (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001D75B9F2230>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\projects\orph.in\jarjamorp.github.io\_python\trending.py", line 148, in <module>
+    main()
+  File "C:\projects\orph.in\jarjamorp.github.io\_python\trending.py", line 132, in main
+    search_term = get_top_trending_search_term()
+  File "C:\projects\orph.in\jarjamorp.github.io\_python\trending.py", line 26, in get_top_trending_search_term
+    pytrends = TrendReq()
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\pytrends\request.py", line 56, in __init__
+    self.cookies = self.GetGoogleCookie()
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\pytrends\request.py", line 88, in GetGoogleCookie
+    return dict(filter(lambda i: i[0] == 'NID', requests.get(
+  File "C:\ProgramData\anaconda3\lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\ProgramData\anaconda3\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\ProgramData\anaconda3\lib\site-packages\requests\sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\ProgramData\anaconda3\lib\site-packages\requests\sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\ProgramData\anaconda3\lib\site-packages\requests\adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='trends.google.com', port=443): Max retries exceeded with url: /trends/explore/?geo=US (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001D75B9F2230>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+Search term:  Jordan
+Traceback (most recent call last):
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\httpx\_transports\default.py", line 72, in map_httpcore_exceptions
+    yield
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\httpx\_transports\default.py", line 236, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\httpcore\_sync\connection_pool.py", line 216, in handle_request
+    raise exc from None
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\httpcore\_sync\connection_pool.py", line 196, in handle_request
+    response = connection.handle_request(
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\httpcore\_sync\connection.py", line 99, in handle_request
+    raise exc
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\httpcore\_sync\connection.py", line 76, in handle_request
+    stream = self._connect(request)
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\httpcore\_sync\connection.py", line 122, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\httpcore\_backends\sync.py", line 205, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\ProgramData\anaconda3\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\openai\_base_client.py", line 981, in _request
+    response = self._client.send(
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\httpx\_client.py", line 926, in send
+    response = self._send_handling_auth(
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\httpx\_client.py", line 954, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\httpx\_client.py", line 991, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\httpx\_client.py", line 1027, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\httpx\_transports\default.py", line 235, in handle_request
+    with map_httpcore_exceptions():
+  File "C:\ProgramData\anaconda3\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\httpx\_transports\default.py", line 89, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\projects\orph.in\jarjamorp.github.io\_python\trending.py", line 148, in <module>
+    main()
+  File "C:\projects\orph.in\jarjamorp.github.io\_python\trending.py", line 139, in main
+    large_filename, thumb_filename = generate_image(prompt, os.path.join(TRENDING_PATH, image_filename))
+  File "C:\projects\orph.in\jarjamorp.github.io\_python\trending.py", line 33, in generate_image
+    response = client.images.generate(
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\openai\resources\images.py", line 264, in generate
+    return self._post(
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\openai\_base_client.py", line 1268, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\openai\_base_client.py", line 945, in request
+    return self._request(
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\openai\_base_client.py", line 1005, in _request
+    return self._retry_request(
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\openai\_base_client.py", line 1083, in _retry_request
+    return self._request(
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\openai\_base_client.py", line 1005, in _request
+    return self._retry_request(
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\openai\_base_client.py", line 1083, in _retry_request
+    return self._request(
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\openai\_base_client.py", line 1015, in _request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
