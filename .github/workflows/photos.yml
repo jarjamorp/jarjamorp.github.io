@@ -1,77 +1,150 @@
-name: Process incoming photos
+name: Process root-level gallery folder
 
 on:
   push:
     branches: [ "photos-staging" ]
-    paths:
-      - "incoming/**"
+    # If you want to limit when it runs, uncomment and adjust:
+    # paths:
+    #   - "*/*"        # any file inside a top-level folder
+    #   - "*/**"       # or deeper
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Derive title/date from commit
+      # ---- Derive metadata from the push ----
+      - name: Derive title/date (and slug) from commit
         run: |
+          set -e
           echo "TITLE=${{ github.event.head_commit.message }}" >> $GITHUB_ENV
-          echo "DATE=$(date -u -d '${{ github.event.head_commit.timestamp }}' +%Y-%m-%d)" >> $GITHUB_ENV
+          ts='${{ github.event.head_commit.timestamp }}'
+          echo "DATE=$(date -u -d "$ts" +%Y-%m-%d)" >> $GITHUB_ENV
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+          # slugify the title (lowercase, non-alnum -> -, trim dashes)
+          SAFE_SLUG="$(printf '%s' "${{ github.event.head_commit.message }}" \
+            | tr '[:upper:]' '[:lower:]' \
+            | sed -E 's/[^a-z0-9]+/-/g;s/^-+|-+$//g')"
+          echo "SAFE_SLUG=$SAFE_SLUG" >> $GITHUB_ENV
+
+          echo "TITLE=$TITLE"
+          echo "DATE=$DATE"
+          echo "SAFE_SLUG=$SAFE_SLUG"
+
+      # ---- Identify which top-level folder was changed (your gallery folder) ----
+      - name: Find changed top-level folder
+        run: |
+          set -e
+          CHANGED="$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}")"
+          echo "$CHANGED" | sed 's/^/CHANGED: /'
+
+          GALLERY_DIR=""
+          # Collect unique top-level dirs that actually exist in the workspace
+          for d in $(echo "$CHANGED" | awk -F/ 'NF>=2{print $1}' | sort -u); do
+            if [ -d "$d" ] && [ -n "$(ls -A "$d" 2>/dev/null)" ]; then
+              GALLERY_DIR="$d"
+              echo "Using gallery dir: $GALLERY_DIR"
+              break
+            fi
+          done
+
+          if [ -z "$GALLERY_DIR" ]; then
+            echo "No gallery dir found"; exit 1
+          fi
+          echo "GALLERY_DIR=$GALLERY_DIR" >> "$GITHUB_ENV"
+
+          # If the folder starts with YYYY-MM-DD-..., prefer that date over commit date
+          if [[ "$GALLERY_DIR" =~ ^([0-9]{4}-[0-9]{2}-[0-9]{2})- ]]; then
+            echo "DATE=${BASH_REMATCH[1]}" >> "$GITHUB_ENV"
+            echo "Overriding DATE from folder: ${BASH_REMATCH[1]}"
+          fi
+
+      - name: List gallery dir (pre-conversion)
+        run: |
+          echo "Contents of $GALLERY_DIR:"
+          ls -lah "$GALLERY_DIR"
+          test -n "$(ls -A "$GALLERY_DIR" 2>/dev/null)" || { echo "Gallery dir is empty"; exit 1; }
+
+      # ---- Python env for generator ----
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install deps
+      - name: Install Python deps
         run: |
           python -m pip install --upgrade pip
+          # pillow-heif improves HEIC support; fall back gracefully
           pip install pillow pillow-heif || pip install pillow
-          # pillow-heif is optional; script should skip HEIC if not present
 
+      # ---- Run your generator: input = that folder, output = ./DATE-slug (temporary) ----
       - name: Generate gallery (convert → HTML)
+        env:
+          TITLE: ${{ env.TITLE }}
+          DATE:  ${{ env.DATE }}
         run: |
+          set -e
           python tools/generate_gallery.py \
-            --input incoming \
-            --outdir photos \
-            --title "${{ env.TITLE }}" \
-            --date "${{ env.DATE }}" \
+            --input "$GALLERY_DIR" \
+            --outdir . \
+            --title "$TITLE" \
+            --date "$DATE" \
             --max-size 2048 \
             --quality 86
 
-      - name: Compute output path
-        id: out
+      # ---- Move generated output back into the same folder name (overwrite with processed files) ----
+      - name: Replace folder contents with generated output
         run: |
-          slug="$(echo "${{ env.TITLE }}" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g;s/^-+|-+$//g')"
-          outdir="photos/${{ env.DATE }}-$slug"
-          echo "OUTDIR=$outdir" >> $GITHUB_ENV
-          echo "name=$outdir" >> $GITHUB_OUTPUT
+          set -e
+          GEN_DIR="${DATE}-${SAFE_SLUG}"
+          if [ ! -d "$GEN_DIR" ]; then
+            echo "ERROR: Expected generated dir '$GEN_DIR' not found"; exit 2
+          fi
 
-      - name: Stash build and switch to main
+          echo "Replacing '$GALLERY_DIR' with contents of '$GEN_DIR'..."
+          rm -rf "$GALLERY_DIR"/*
+          shopt -s dotglob
+          mv "$GEN_DIR"/* "$GALLERY_DIR"/
+          shopt -u dotglob
+          rmdir "$GEN_DIR" || true
+
+          echo "OUTDIR=$GALLERY_DIR" >> $GITHUB_ENV
+          echo "OUTDIR=$GALLERY_DIR"
+
+      - name: List gallery dir (post-conversion)
         run: |
-          tmp="$(mktemp -d)"
-          cp -r "${{ env.OUTDIR }}" "$tmp/"
-          git config user.name "photo-bot"
-          git config user.email "photo-bot@users.noreply.github.com"
+          echo "Contents of $OUTDIR after conversion:"
+          ls -lah "$OUTDIR"
+
+      # ---- Stash → checkout main → copy (avoid copying onto itself) ----
+      - name: Stash gallery for main
+        run: |
+          set -e
+          TMPDIR="$(mktemp -d)"
+          echo "TMPDIR=$TMPDIR" >> $GITHUB_ENV
+          cp -a "$OUTDIR" "$TMPDIR/"
+          echo "Stashed $OUTDIR -> $TMPDIR"
+
+      - name: Switch to main
+        run: |
           git fetch origin main
           git checkout main
-          mkdir -p photos
-          cp -r "$tmp/$(basename "${{ env.OUTDIR }}")" photos/
 
-      - name: Commit gallery to main
+      - name: Copy gallery into main and commit
         run: |
-          git add "${{ env.OUTDIR }}"
-          git commit -m "Add gallery: ${{ env.TITLE }} (${{ env.DATE }})" || echo "Nothing to commit"
+          set -e
+          # ensure target path is replaced cleanly
+          rm -rf "$OUTDIR"
+          cp -a "$TMPDIR/$(basename "$OUTDIR")" "$OUTDIR"
+          ls -lah "$OUTDIR"
+
+          git config user.name "photo-bot"
+          git config user.email "photo-bot@users.noreply.github.com"
+          git add "$OUTDIR"
+          git commit -m "Add gallery: $TITLE ($DATE)" || echo "Nothing to commit"
           git push origin main
-
-      - name: (Optional) Clean incoming on staging
-        run: |
-          git checkout photos-staging
-          git rm -r incoming || true
-          mkdir -p incoming && touch incoming/.gitkeep
-          git add incoming/.gitkeep
-          git commit -m "Reset incoming after ${{ env.TITLE }}" || true
-          git push origin photos-staging
