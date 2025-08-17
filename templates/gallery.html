@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+  <a href="/">← Back</a>
+  <h2>{{ gallery.title }}</h2>
+  <p class="muted">{{ gallery.date }}</p>
+
+  {% if gallery.images and gallery.images[0].webp_url %}
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px">
+      {% for img in gallery.images %}
+        <a href="{{ img.webp_url }}" target="_blank" rel="noopener">
+          <img loading="lazy" decoding="async" src="{{ img.thumb_url }}" alt="{{ img.alt }}" style="width:100%;height:auto">
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No images yet.</p>
+  {% endif %}
+{% endblock %}

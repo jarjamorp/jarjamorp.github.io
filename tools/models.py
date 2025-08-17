@@ -6,6 +6,7 @@ class ImageAsset:
     webp_url: str
     thumb_url: str
     alt: str = ""
+    source_file: Optional[str] = None  # <-- used by the processor, not templates
 
 @dataclass
 class VideoAsset:
@@ -16,7 +17,7 @@ class VideoAsset:
 class Gallery:
     slug: str
     title: str
-    date: str              # YYYY-MM-DD
+    date: str
     cover_image_url: Optional[str]
     images: List[ImageAsset]
     videos: List[VideoAsset]

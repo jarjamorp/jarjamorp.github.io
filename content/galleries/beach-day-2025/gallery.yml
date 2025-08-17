@@ -1,3 +1,8 @@
 title: Beach Day (2025)
 date: 2025-08-12
 cover: 001.jpg
+images:
+  - file: 001.JPG
+    alt: Sandbar at sunset
+  - file: 002.JPG
+    alt: Friends on the dune
