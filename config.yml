@@ -1,0 +1,6 @@
+paths:
+  content: content
+  output: site
+  templates: templates
+asset_base_url: ""     # keep empty for now; can point to CDN later
+site_title: "My Site"

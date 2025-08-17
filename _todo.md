@@ -7,7 +7,11 @@ update the image names in iPhone upload workflow so they're consistent with othe
 add a reference to the newly created html file and its folder and images 
 fix generate_gallery_line_itmes.py -> create a python script that generates a standard gallery page 
     use this standard gallery page to generate a new page when photos uploaded from iPhone 
-    update photos.yml accordingly   
+    update photos.yml accordingly  
+
+LATER
+
+build a simple frontend for creating pages, loading images (converts to webp), writing things, etc. (make it super easy to post stuff)
 
 <!-- DONE
 

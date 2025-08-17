@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ site_title }}</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>body{font-family:sans-serif;max-width:800px;margin:2rem auto;padding:0 1rem}</style>
+</head>
+<body>
+  <header><h1>{{ site_title }}</h1></header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  <footer style="margin-top:3rem;color:#666">Generated at {{ build_time }}</footer>
+</body>
+</html>
