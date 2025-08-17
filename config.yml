@@ -10,7 +10,7 @@ asset_base_url: ""  # keep empty for now; later you can point this at a CDN
 images:
   originals_dir_name: images      # where your original JPG/PNG live inside each gallery
   output_dir_name: img            # where processed web assets go inside site/
-  webp_quality: 82
+  webp_quality: 85
   thumb:
     width: 75
     height: 75

@@ -5,7 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ site_title }}</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <style>body{font-family:sans-serif;max-width:800px;margin:2rem auto;padding:0 1rem}</style>
+  <style>
+    /* CSS-only lightbox via :target */
+    .lb-backdrop {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.92);
+      display: none; /* hidden by default */
+      align-items: center; justify-content: center;
+      z-index: 9999;
+      padding: 2.5rem 1.5rem; /* room for buttons */
+    }
+    .lb-backdrop:target { display: flex; }
+
+    .lb-dialog { max-width: 96vw; max-height: 90vh; }
+    .lb-img { max-width: 96vw; max-height: 90vh; display: block; object-fit: contain; }
+    .lb-caption { color: #ddd; text-align: center; margin-top: .6rem; font-size: .95rem; }
+
+    .lb-close, .lb-prev, .lb-next {
+      position: absolute; color: #fff; text-decoration: none;
+      background: rgba(20,20,20,.6); border: 1px solid rgba(255,255,255,.25);
+      padding: .45rem .6rem; line-height: 1; user-select: none;
+    }
+    .lb-close { top: .75rem; right: .75rem; border-radius: 6px; font-size: 1rem; }
+    .lb-prev, .lb-next {
+      top: 50%; transform: translateY(-50%); border-radius: 999px; font-size: 1.6rem;
+    }
+    .lb-prev { left: 1rem; }
+    .lb-next { right: 1rem; }
+    @media (max-width: 700px) {
+      .lb-prev { left: .5rem; } .lb-next { right: .5rem; }
+    }
+  </style>
+
 </head>
 <body>
   <header><h1>{{ site_title }}</h1></header>
