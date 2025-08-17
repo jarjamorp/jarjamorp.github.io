@@ -1,0 +1,75 @@
+name: Process photos from release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get release context
+        id: rel
+        run: |
+          echo "TITLE=${{ github.event.release.name }}" >> $GITHUB_ENV
+          # Extract date from tag `photos-YYYY-MM-DD-slug`
+          TAG="${{ github.event.release.tag_name }}"
+          DATE=$(echo "$TAG" | sed -E 's/^photos-([0-9]{4}-[0-9]{2}-[0-9]{2}).*$/\1/')
+          echo "DATE=$DATE" >> $GITHUB_ENV
+          # Get first asset download URL
+          ASSET_URL=$(jq -r '.release.assets[0].browser_download_url' "$GITHUB_EVENT_PATH")
+          echo "ASSET_URL=$ASSET_URL" >> $GITHUB_ENV
+
+      - name: Download ZIP asset
+        run: |
+          curl -L -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/octet-stream" \
+            -o photos.zip "${ASSET_URL}"
+
+      - name: Unzip photos
+        run: |
+          mkdir incoming
+          unzip -q photos.zip -d incoming
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install pillow pillow-heif || pip install pillow
+
+      - name: Generate gallery
+        run: |
+          python tools/generate_gallery.py \
+            --input incoming \
+            --outdir photos \
+            --title "${{ env.TITLE }}" \
+            --date "${{ env.DATE }}" \
+            --max-size 2048 \
+            --quality 86
+
+      - name: Compute output path
+        run: |
+          slug="$(echo "${{ env.TITLE }}" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g;s/^-+|-+$//g')"
+          echo "OUTDIR=photos/${{ env.DATE }}-$slug" >> $GITHUB_ENV
+
+      - name: Commit to main
+        run: |
+          git config user.name "photo-bot"
+          git config user.email "photo-bot@users.noreply.github.com"
+          git fetch origin main
+          git checkout main
+          mkdir -p photos
+          cp -r "${{ env.OUTDIR }}" photos/
+          git add "${{ env.OUTDIR }}"
+          git commit -m "Add gallery: ${{ env.TITLE }} (${{ env.DATE }})" || echo "Nothing to commit"
+          git push origin main
