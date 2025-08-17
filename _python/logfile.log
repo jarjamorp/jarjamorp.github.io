@@ -2975,3 +2975,15 @@ Traceback (most recent call last):
   File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\pytrends\request.py", line 160, in _get_data
     raise exceptions.ResponseError.from_response(response)
 pytrends.exceptions.ResponseError: The request failed: Google returned a response with code 404
+Traceback (most recent call last):
+  File "C:\projects\orph.in\jarjamorp.github.io\_python\trending.py", line 148, in <module>
+    main()
+  File "C:\projects\orph.in\jarjamorp.github.io\_python\trending.py", line 132, in main
+    search_term = get_top_trending_search_term()
+  File "C:\projects\orph.in\jarjamorp.github.io\_python\trending.py", line 27, in get_top_trending_search_term
+    trending_searches_df = pytrends.trending_searches(pn='united_states')
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\pytrends\request.py", line 474, in trending_searches
+    req_json = self._get_data(
+  File "C:\Users\harra\AppData\Roaming\Python\Python310\site-packages\pytrends\request.py", line 160, in _get_data
+    raise exceptions.ResponseError.from_response(response)
+pytrends.exceptions.ResponseError: The request failed: Google returned a response with code 404
