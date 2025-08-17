@@ -54,7 +54,7 @@ jobs:
           TITLE: ${{ env.TITLE }}
           DATE:  ${{ env.DATE }}
         run: |
-          python tools/generate_gallery.py \
+          python _tools/generate_gallery.py \
             --input "$GALLERY_DIR" \
             --outdir "$GALLERY_DIR" \
             --title "$TITLE" \
@@ -64,7 +64,7 @@ jobs:
 
       # - name: Regenerate root index.html
       #   run: |
-      #     python tools/generate_site_index.py
+      #     python _tools/generate_site_index.py
       #     test -f index.html || { echo "index.html was not generated"; exit 1; }
           
       - name: Commit processed gallery + index
