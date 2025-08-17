@@ -24,3 +24,13 @@ def build_index(cfg: dict) -> Path:
     }
     render_to_file(env, "index.html", ctx, out)
     return out
+
+def build_index_with_galleries(cfg: dict, galleries: list) -> None:
+    env = make_env(Path(cfg["paths"]["templates"]))
+    out = Path(cfg["paths"]["output"]) / "index.html"
+    ctx = {
+        "site_title": cfg.get("site_title", "My Site"),
+        "build_time": datetime.now().isoformat(timespec="seconds"),
+        "galleries": galleries,
+    }
+    render_to_file(env, "index.html", ctx, out)
