@@ -1,0 +1,77 @@
+name: Process incoming photos
+
+on:
+  push:
+    branches: [ "photos-staging" ]
+    paths:
+      - "incoming/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Derive title/date from commit
+        run: |
+          echo "TITLE=${{ github.event.head_commit.message }}" >> $GITHUB_ENV
+          echo "DATE=$(date -u -d '${{ github.event.head_commit.timestamp }}' +%Y-%m-%d)" >> $GITHUB_ENV
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install pillow pillow-heif || pip install pillow
+          # pillow-heif is optional; script should skip HEIC if not present
+
+      - name: Generate gallery (convert → HTML)
+        run: |
+          python tools/generate_gallery.py \
+            --input incoming \
+            --outdir photos \
+            --title "${{ env.TITLE }}" \
+            --date "${{ env.DATE }}" \
+            --max-size 2048 \
+            --quality 86
+
+      - name: Compute output path
+        id: out
+        run: |
+          slug="$(echo "${{ env.TITLE }}" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g;s/^-+|-+$//g')"
+          outdir="photos/${{ env.DATE }}-$slug"
+          echo "OUTDIR=$outdir" >> $GITHUB_ENV
+          echo "name=$outdir" >> $GITHUB_OUTPUT
+
+      - name: Stash build and switch to main
+        run: |
+          tmp="$(mktemp -d)"
+          cp -r "${{ env.OUTDIR }}" "$tmp/"
+          git config user.name "photo-bot"
+          git config user.email "photo-bot@users.noreply.github.com"
+          git fetch origin main
+          git checkout main
+          mkdir -p photos
+          cp -r "$tmp/$(basename "${{ env.OUTDIR }}")" photos/
+
+      - name: Commit gallery to main
+        run: |
+          git add "${{ env.OUTDIR }}"
+          git commit -m "Add gallery: ${{ env.TITLE }} (${{ env.DATE }})" || echo "Nothing to commit"
+          git push origin main
+
+      - name: (Optional) Clean incoming on staging
+        run: |
+          git checkout photos-staging
+          git rm -r incoming || true
+          mkdir -p incoming && touch incoming/.gitkeep
+          git add incoming/.gitkeep
+          git commit -m "Reset incoming after ${{ env.TITLE }}" || true
+          git push origin photos-staging
