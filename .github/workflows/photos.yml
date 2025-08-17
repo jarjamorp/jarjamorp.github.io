@@ -1,150 +1,68 @@
-name: Process root-level gallery folder
+name: Process iOS gallery (marker-triggered, in-place)
 
 on:
   push:
-    branches: [ "photos-staging" ]
-    # If you want to limit when it runs, uncomment and adjust:
-    # paths:
-    #   - "*/*"        # any file inside a top-level folder
-    #   - "*/**"       # or deeper
+    branches: [ "main" ]
+    # Only run when a top-level folder's .from-ios marker is created/updated
+    paths:
+      - "*/.from-ios"
 
 jobs:
   build:
+    if: github.actor != 'github-actions[bot]'  # avoid loops on our own commits
     runs-on: ubuntu-latest
     permissions:
       contents: write
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+        with: { fetch-depth: 0 }
 
-      # ---- Derive metadata from the push ----
-      - name: Derive title/date (and slug) from commit
+      - name: Derive title/date
         run: |
-          set -e
           echo "TITLE=${{ github.event.head_commit.message }}" >> $GITHUB_ENV
           ts='${{ github.event.head_commit.timestamp }}'
           echo "DATE=$(date -u -d "$ts" +%Y-%m-%d)" >> $GITHUB_ENV
+          echo "TITLE=$TITLE"; echo "DATE=$DATE"
 
-          # slugify the title (lowercase, non-alnum -> -, trim dashes)
-          SAFE_SLUG="$(printf '%s' "${{ github.event.head_commit.message }}" \
-            | tr '[:upper:]' '[:lower:]' \
-            | sed -E 's/[^a-z0-9]+/-/g;s/^-+|-+$//g')"
-          echo "SAFE_SLUG=$SAFE_SLUG" >> $GITHUB_ENV
-
-          echo "TITLE=$TITLE"
-          echo "DATE=$DATE"
-          echo "SAFE_SLUG=$SAFE_SLUG"
-
-      # ---- Identify which top-level folder was changed (your gallery folder) ----
-      - name: Find changed top-level folder
+      - name: Identify gallery folder from marker
+        shell: bash
         run: |
-          set -e
+          set -Eeuo pipefail
           CHANGED="$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}")"
           echo "$CHANGED" | sed 's/^/CHANGED: /'
+          # Find a path ending with '.from-ios' and take its parent dir (top-level)
+          GALLERY_DIR="$(awk -F/ '/\.from-ios$/{print $1; exit}' <<< "$CHANGED" || true)"
+          if [[ -z "${GALLERY_DIR}" ]]; then echo "No marker found"; exit 1; fi
+          if [[ ! -d "${GALLERY_DIR}" ]]; then echo "Folder '${GALLERY_DIR}' not found"; ls -la; exit 1; fi
+          echo "Using gallery dir: ${GALLERY_DIR}"
+          echo "GALLERY_DIR=${GALLERY_DIR}" >> "$GITHUB_ENV"
 
-          GALLERY_DIR=""
-          # Collect unique top-level dirs that actually exist in the workspace
-          for d in $(echo "$CHANGED" | awk -F/ 'NF>=2{print $1}' | sort -u); do
-            if [ -d "$d" ] && [ -n "$(ls -A "$d" 2>/dev/null)" ]; then
-              GALLERY_DIR="$d"
-              echo "Using gallery dir: $GALLERY_DIR"
-              break
-            fi
-          done
+      - name: List folder (pre)
+        run: ls -lah "$GALLERY_DIR"
 
-          if [ -z "$GALLERY_DIR" ]; then
-            echo "No gallery dir found"; exit 1
-          fi
-          echo "GALLERY_DIR=$GALLERY_DIR" >> "$GITHUB_ENV"
-
-          # If the folder starts with YYYY-MM-DD-..., prefer that date over commit date
-          if [[ "$GALLERY_DIR" =~ ^([0-9]{4}-[0-9]{2}-[0-9]{2})- ]]; then
-            echo "DATE=${BASH_REMATCH[1]}" >> "$GITHUB_ENV"
-            echo "Overriding DATE from folder: ${BASH_REMATCH[1]}"
-          fi
-
-      - name: List gallery dir (pre-conversion)
-        run: |
-          echo "Contents of $GALLERY_DIR:"
-          ls -lah "$GALLERY_DIR"
-          test -n "$(ls -A "$GALLERY_DIR" 2>/dev/null)" || { echo "Gallery dir is empty"; exit 1; }
-
-      # ---- Python env for generator ----
       - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+        with: { python-version: '3.11' }
 
-      - name: Install Python deps
+      - name: Install deps
         run: |
           python -m pip install --upgrade pip
-          # pillow-heif improves HEIC support; fall back gracefully
           pip install pillow pillow-heif || pip install pillow
 
-      # ---- Run your generator: input = that folder, output = ./DATE-slug (temporary) ----
-      - name: Generate gallery (convert → HTML)
+      - name: Generate gallery (in-place)
         env:
           TITLE: ${{ env.TITLE }}
           DATE:  ${{ env.DATE }}
         run: |
-          set -e
           python tools/generate_gallery.py \
             --input "$GALLERY_DIR" \
-            --outdir . \
+            --outdir "$GALLERY_DIR" \
             --title "$TITLE" \
             --date "$DATE" \
             --max-size 2048 \
             --quality 86
 
-      # ---- Move generated output back into the same folder name (overwrite with processed files) ----
-      - name: Replace folder contents with generated output
-        run: |
-          set -e
-          GEN_DIR="${DATE}-${SAFE_SLUG}"
-          if [ ! -d "$GEN_DIR" ]; then
-            echo "ERROR: Expected generated dir '$GEN_DIR' not found"; exit 2
-          fi
-
-          echo "Replacing '$GALLERY_DIR' with contents of '$GEN_DIR'..."
-          rm -rf "$GALLERY_DIR"/*
-          shopt -s dotglob
-          mv "$GEN_DIR"/* "$GALLERY_DIR"/
-          shopt -u dotglob
-          rmdir "$GEN_DIR" || true
-
-          echo "OUTDIR=$GALLERY_DIR" >> $GITHUB_ENV
-          echo "OUTDIR=$GALLERY_DIR"
-
-      - name: List gallery dir (post-conversion)
-        run: |
-          echo "Contents of $OUTDIR after conversion:"
-          ls -lah "$OUTDIR"
-
-      # ---- Stash → checkout main → copy (avoid copying onto itself) ----
-      - name: Stash gallery for main
-        run: |
-          set -e
-          TMPDIR="$(mktemp -d)"
-          echo "TMPDIR=$TMPDIR" >> $GITHUB_ENV
-          cp -a "$OUTDIR" "$TMPDIR/"
-          echo "Stashed $OUTDIR -> $TMPDIR"
-
-      - name: Switch to main
-        run: |
-          git fetch origin main
-          git checkout main
-
-      - name: Copy gallery into main and commit
-        run: |
-          set -e
-          # ensure target path is replaced cleanly
-          rm -rf "$OUTDIR"
-          cp -a "$TMPDIR/$(basename "$OUTDIR")" "$OUTDIR"
-          ls -lah "$OUTDIR"
-
-          git config user.name "photo-bot"
-          git config user.email "photo-bot@users.noreply.github.com"
-          git add "$OUTDIR"
-          git commit -m "Add gallery: $TITLE ($DATE)" || echo "Nothing to commit"
-          git push origin main
+      # - name: Regenerate root index.html
+      #   run: |
+      #     python tools/generate_site_index.py
+      #     test -f index.html || { echo "index.html was not generated"; exit 1; }
