@@ -42,13 +42,13 @@ ol {
   text-align: center;
   justify-content: center;
 }
-.page-links__link {
+.page-links-link {
   font-size: 5em;
   padding: 10px 60px;
   text-decoration: none;
   color: inherit;
 }
-.page-links__link img {
+.page-links-link img {
   margin-right: 20px;
   border: 1px solid black;
   max-height: 75px;
@@ -83,18 +83,18 @@ ol {
 
 /*--------- SERIES PAGE ----------*/
 
-.header--series {
+.header-series {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
-.nav--series {
+.nav-series {
   position: absolute;
   left: 30px; 
 }
-.nav__link--series {
+.nav-link-series {
   text-decoration: none; 
   color: inherit;
 }
@@ -202,7 +202,7 @@ ol {
   max-height: 90%;
   border: 1px solid lightgray;
 }
-.lightbox__close {
+.lightbox-close {
   position: absolute;
   top: 10px;
   right: 30px;
@@ -251,15 +251,15 @@ ol {
   video {
     width: 90%;
   }
-  .page-links__link {
+  .page-links-link {
     font-size: 1.3em;
     padding: 0px 20px;
   }
-  .page-links__link img {
+  .page-links-link img {
     margin-right: 10px;
     max-height: 20px;
   }
-  .nav--series {
+  .nav-series {
     left: 10px;
   }
   .lightbox {

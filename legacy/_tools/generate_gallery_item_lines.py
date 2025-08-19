@@ -6,7 +6,7 @@ def generate_gallery_items(number_of_items, filename, seriesname):
 def generate_lightbox_items(number_of_items, filename, seriesname):
     for i in range(number_of_items+1):
         line = f'''  <div class="lightbox" id="img{i}">
-    <a href="#" class="lightbox__close">&times;</a>
+    <a href="#" class="lightbox-close">&times;</a>
     <img src="{filename}/{i}.webp" alt="{seriesname}: {i}">
   </div>'''
         print(line)

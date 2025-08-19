@@ -37,7 +37,7 @@ def generate_image_divs(title, foldername, number_of_images):
 def generate_lightbox_divs(title, foldername, number_of_images):
     template = """
   <div class="lightbox" id="img{num}">
-    <a href="#" class="lightbox__close">&times;</a>
+    <a href="#" class="lightbox-close">&times;</a>
     <img src="{foldername}/{num}.webp" alt="Image {num} - {title}">
   </div>
     """
@@ -45,9 +45,9 @@ def generate_lightbox_divs(title, foldername, number_of_images):
 
 def generate_header(title):
     return f"""
-  <header class="header header--series">
-    <nav class="nav nav--series">
-      <h2><a href="index.html" class="nav__link--series"> <strong>&lt;</strong></a></h2>
+  <header class="header header-series">
+    <nav class="nav nav-series">
+      <h2><a href="index.html" class="nav-link-series"> <strong>&lt;</strong></a></h2>
     </nav>
     <div>
       <h1>{title}</h1>

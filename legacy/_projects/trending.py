@@ -82,7 +82,7 @@ def update_index_html(large_filename, thumb_filename, index_html_path, prompt, s
     new_lightbox_div = f'''
   
    <div class="lightbox" id="{image_name}">
-    <a href="#" class="lightbox__close">&times;</a>
+    <a href="#" class="lightbox-close">&times;</a>
     <img src="trending/{os.path.basename(large_filename)}" alt="{prompt}">
     <div class="lightbox__text">"{search_term}" on {datetime.now().strftime("%A %d %B %Y")}</div>
   </div>'''

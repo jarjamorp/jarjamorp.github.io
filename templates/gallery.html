@@ -11,8 +11,8 @@
     </div>
   </section>
 
-  <header class="header--series">
-    <nav class="nav--series"><h2><a href="/" class="nav__link--series"><strong>&lt;</strong></a></h2></nav>
+  <header class="header-series">
+    <nav class="nav-series"><h2><a href="/" class="nav-link-series"><strong>&lt;</strong></a></h2></nav>
     <div><h1>{{ gallery.title }}</h1></div>
   </header>
 
@@ -23,10 +23,10 @@
       <div class="lightbox"
           id="{{ gallery.slug }}-{{ loop.index0 }}"
           role="dialog">
-        <a href="#" class="lightbox__close">&times;</a>
-        <img class="lightbox__img" src="{{ img.webp_url }}" alt="{{ img.alt }}">
+        <a href="#" class="lightbox-close">&times;</a>
+        <img class="lightbox-img" src="{{ img.webp_url }}" alt="{{ img.alt }}">
         {% if img.alt %}
-          <div class="lightbox__caption">{{ img.alt }}</div>
+          <div class="lightbox-caption">{{ img.alt }}</div>
         {% endif %}
       </div>
     {% endfor %}
