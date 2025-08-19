@@ -12,5 +12,7 @@ images:
   output_dir_name: img            # where processed web assets go inside site/
   webp_quality: 85
   thumb:
-    width: 75
-    height: 75
+    width: 150
+    height: 150
+  naming: index   # or "index" for 001.webp, 002.webp, ...
+  index_pad: 3       # 3 -> 001, 4 -> 0001
