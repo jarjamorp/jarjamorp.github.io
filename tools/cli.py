@@ -2,7 +2,7 @@ import argparse
 from tools.config import load_config
 from tools.pages import build_index, build_index_with_galleries
 from tools.models import Gallery, ImageAsset, VideoAsset
-from tools.galleries import scan_galleries, build_gallery_pages, process_gallery_media
+from tools.galleries import scan_galleries, build_gallery_pages, process_gallery_media, init_gallery
 from pathlib import Path
 from tools.cache import load_manifest, save_manifest
 
@@ -15,6 +15,10 @@ def main():
     p.add_argument("--force", action="store_true", help="Ignore cache and rebuild media even if unchanged")
     p_all = sub.add_parser("build-all")
     p_all.add_argument("--force", action="store_true", help="Ignore cache and rebuild media even if unchanged")
+    p_new = sub.add_parser("init-gallery")
+    p_new.add_argument("slug", help="Folder name under content/galleries")
+    p_new.add_argument("--title", help="Display title (defaults from slug)")
+    p_new.add_argument("--date", help="YYYY-MM-DD (defaults to today)")
 
     args = parser.parse_args()
 
@@ -58,6 +62,8 @@ def main():
         from tools.pages import build_index_with_galleries
         build_index_with_galleries(cfg, galleries)
         print(f"Wrote {len(galleries)} gallery page(s) and index")
+    elif args.cmd == "init-gallery":
+        init_gallery(cfg, args.slug, args.title, args.date)
 
 
 if __name__ == "__main__":

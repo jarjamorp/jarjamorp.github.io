@@ -1,4 +1,4 @@
 title: Beach Day (2025)
 date: 2025-08-12
-cover: auto # or omit; will pick first image
+cover: 002.JPG # or omit; will pick first image, or add specific image like "002.JPG"
 images: auto

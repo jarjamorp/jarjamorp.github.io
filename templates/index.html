@@ -1,13 +1,16 @@
 {% extends "base.html" %}
-{% block content %}
-  <h2>Galleries</h2>
-  <ul>
-    {% for g in galleries %}
-      <li>
-        <a href="/galleries/{{ g.slug }}/">{{ g.title }}</a>
-        <small style="color:#666">({{ g.date }})</small>
-      </li>
-    {% endfor %}
-  </ul>
-{% endblock %}
+{% block title %}Home{% endblock %}
 
+{% block content %}
+  <main class="page-links">
+    {% for g in galleries %}
+      {% set tile_thumb = g.cover_image_url and g.cover_image_url.replace('.webp', '_thumb.webp') %}
+      <a href="/galleries/{{ g.slug }}/" class="page-links-link">
+        {% if tile_thumb %}
+          <img src="{{ tile_thumb }}" alt="{{ g.title }}" loading="lazy">
+        {% endif %}
+        {{ g.title }}
+      </a>
+    {% endfor %}
+  </main>
+{% endblock %}

@@ -3,7 +3,7 @@ paths:
   output: site
   templates: templates
 asset_base_url: ""     # keep empty for now; can point to CDN later
-site_title: "My Site"
+site_title: "J. J. Orphin"
 
 asset_base_url: ""  # keep empty for now; later you can point this at a CDN
 

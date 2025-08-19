@@ -1,6 +1,6 @@
 from __future__ import annotations
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, date
 import yaml
 from yaml import YAMLError
 
@@ -54,6 +54,23 @@ def _output_stem(fname: str, idx: int, cfg: dict) -> str:
     # default: keep original base name
     return Path(fname).stem
 
+def init_gallery(cfg, slug, title=None, dstr=None):
+    gdir = Path(cfg["paths"]["content"]) / "galleries" / slug
+    gdir.mkdir(parents=True, exist_ok=True)
+    (gdir / "images").mkdir(exist_ok=True)
+    meta_p = gdir / "gallery.yml"
+    if meta_p.exists():
+        print(f"{meta_p} already exists; not overwriting.")
+        return
+    payload = {
+        "title": title or slug.replace("-", " ").title(),
+        "date": dstr or date.today().isoformat(),
+        "cover": "auto", # or thumb filename, eg, 001.jpg
+        "images": "auto",
+    }
+    meta_p.write_text(yaml.safe_dump(payload, sort_keys=False), encoding="utf-8")
+    print(f"Created {meta_p}")
+    
 def scan_galleries(cfg: dict) -> list[Gallery]:
     root = Path(cfg["paths"]["content"]) / "galleries"
     galleries: list[Gallery] = []

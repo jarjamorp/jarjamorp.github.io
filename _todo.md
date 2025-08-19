@@ -1,4 +1,5 @@
 
+fix index.html being generated as the page name in site/galleries/*/index.html - make it the gallery title
 
 create a html file of the same name as title, in the current page template format 
 update the image names in iPhone upload workflow so they're consistent with other galleries
